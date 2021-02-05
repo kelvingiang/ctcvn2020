@@ -1,0 +1,222 @@
+@media only screen and (max-device-width: 1920px){
+    .box_skitter_large{
+        height: 400px !important;
+    }
+    box_skitter {
+        height: 400px !important;
+    }
+    .container_skitter{
+        height: 400px !important;
+    }
+
+    .border_box{
+        height: 400px !important;
+    }
+
+}
+@media only screen and (max-device-width: 1366px){
+    .box_skitter_large{
+        height: 300px !important;
+    }
+    box_skitter {
+        height: 300px !important;
+    }
+    .container_skitter{
+        height: 300px !important;
+    }
+
+    .border_box{
+        height: 300px !important;
+    }
+
+    div.head-title{
+        height: 75px;
+        margin-left: -4%;
+        background-color: transparent;
+        background-image:url("images/bg-head.png");
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    div.title{
+        background-color: #FF8003;
+        margin-top: 17px ;
+        margin-left: 20px;
+        height: 49px;
+        position: absolute;
+        border-radius: 0 3px 3px 0;
+        box-shadow: 5px 5px 5px #c9c9c9;
+        min-width: 40%;
+        width: 70%;
+    }
+    h2.head {
+        font-weight: bold;
+        padding-left: 10%;
+        padding-right: 0%;
+        color: white;
+        font-size: 1.5em;
+        margin-top: 11px;
+    }
+}
+
+
+@media only screen and (max-device-width: 1024px){
+    .box_skitter_large{
+        height: 200px !important;
+    }
+
+    .container_skitter{
+        height: 200px !important;
+    }
+    box_skitter {
+        height: 200px !important;
+    }
+
+    .border_box{
+        height: 200px !important;
+    }
+
+    div.head-title{
+        height: 75px;
+        margin-left: -6%;
+        background-color: transparent;
+        background-image:url("images/bg-head.png");
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    div.title{
+        background-color: #FF8003;
+        margin-top: 17px ;
+        margin-left: 20px;
+        height: 49px;
+        position: absolute;
+        border-radius: 0 3px 3px 0;
+        box-shadow: 5px 5px 5px #c9c9c9;
+        min-width: 40%;
+        width: 70%;
+    }
+    h2.head {
+        font-weight: bold;
+        padding-left: 10%;
+        padding-right: 0%;
+        color: white;
+        font-size: 1.5em;
+        margin-top: 11px;
+    }
+}
+
+
+
+@media only screen and (max-device-width : 800px) {
+    .box_skitter_large{
+        height: 150px !important;
+    }
+
+    .container_skitter{
+        height: 150px !important;
+    }
+    box_skitter {
+        height: 150px !important;
+    }
+
+    .border_box{
+        height: 150px !important;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }   
+    /*H2 CUA TITLE MAU CAM CO BACKGROUND*/
+    h2.head{
+        font-size: 1.2em;
+        margin-top: 18px;
+    }
+
+    .article-list li a{
+        font-size: 11px;
+    }
+    .primary-menu ul li a {
+        color: #D8D8D8;
+        border-top: none;
+        border-left: none;
+        font-weight:  bold;
+        padding: 2px 8px;
+        font-size: 12px;
+    }
+}
+
+
+
+@media only screen and  (max-device-width : 600px) {
+    .border_box{
+        display: none;   
+    }
+    #computer{
+        display: none
+    }
+    #moblie{
+        display: block;
+
+    }
+    .sf-menu{
+        float:  none !important;
+    }
+
+    h3 {
+        font-size: 0.9em;
+    } 
+    .footer-content{
+        width: 100%
+    }
+    .footer-content a {
+        font-size: 0.8em;
+    }
+    /*    .copy-right {
+            font-size: 0.5em;
+        }
+    */
+    h2.head{
+        font-size: 0.9em;
+    }
+    label{
+        font-weight: 500;
+    }
+    /*MAIN MENU*/
+    .primary-menu ul li a {
+        font-size: 1.5rem !important;
+    }
+
+    .sf-menu > li {
+        float:  none;
+    }
+
+    .sub-menu {
+        /*display: block !important;*/
+        position: relative !important ;
+        padding-left:  20px !important ;
+    }
+
+    .article-list li a {
+        font-size: 10px;
+        margin-left : 0px !important;
+    }
+    .orange-title-text{
+        font-size: 13px;
+    }
+    .lbl-content{
+        margin-left:2px   
+    }
+    ul.children {
+        margin-left: 3px;
+    }
+    ul.children li{
+        /*margin-left: 10px;*/
+        background-color: #D2EBF7 !important;
+    }
+    .spaceTop {
+        margin-top: 1px;
+        margin-left: 10px;
+    }
+}
+

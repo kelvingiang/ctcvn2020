@@ -1,0 +1,272 @@
+#wpfooter{
+    display: none;
+}
+.type-date{
+    width: 100px !important;
+}
+.type-time{
+    width: 60px !important;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear {
+    clear: both;
+}
+
+.admin-link{
+    font-weight:  bold;
+    color: #2AA1FC;
+    font-size: 15px;
+}
+
+.admin-link:hover{
+    color: #035CAF;
+}
+/* B  ----- product post style------------ */
+.label-bold{
+    font-weight: bold
+}
+
+.label-admin{
+    color: #444;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+.lable-note{
+    color: #a0a0a0;
+}
+.txt-pro-name {
+    width: 80%
+}
+
+.content{
+    min-height: 35px;
+    margin-bottom: 10px;
+}
+
+.content input[type="text"]{
+    height: 30px;
+    width: 96%;
+}
+
+
+/*E ---------------------------*/
+h3.admin-title{
+    font-size: 14px !important; 
+    color: #0354A5;
+}
+
+.admin-title {
+    font-weight: 600;
+    margin-right: 5px;
+}
+/*--------  B  phan tap -------------*/
+#tap-title{
+    padding-top: 0px;
+}
+
+#tap-title li { float:left;
+                background-color:#e2e2e2;
+                color:#999;
+                margin-right:1px; 
+                padding:2px;
+                width:200px;
+                height: 30px;
+                line-height: 2.5;
+                text-align:center; 
+                text-shadow:#00C;
+                border:1px #FFF solid;
+                margin-bottom: 0px;
+                border-radius: 5px 5px 0 0;
+                cursor: pointer;
+}  
+
+#tap-title li.current{
+    background-color:#cccccc;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 0px #fff  solid;
+    padding-bottom: 3px;
+    cursor: auto;
+}	  
+
+
+
+.content-current{
+    display:block !important;
+    background-color: #cccccc;
+}			
+
+
+.tap-content {
+    clear:left;
+    border-radius: 0px 5px 5px 5px;
+    padding: 20px 10px;
+    display:none;
+}
+/* ------ E ----------- */
+
+/* -- B --- member metabox*/
+.content {
+    clear:  both;
+}
+.content .cell-one{
+    float: left;
+    width: 120px;
+}
+
+.content .cell-two{
+    width: 400px;
+    float: left;
+}
+
+/*---E  member matebox------------*/
+
+
+
+/* --B -- phan cloumn  trong  */
+
+/* phan acive cua column */
+.column-stockstatus {
+    width: 100px;
+}
+
+span.num {
+    float: left;
+    margin: 5px 0 0 0;
+    font-size: 11px;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px #666;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    background: #999;
+    color: #fff;
+}
+
+span.num-active {background: #708858;width: 20px; height: 20px;   border-radius: 10px;}
+span.num-inactive {background: #885858 ;width: 20px; height: 20px;   border-radius: 10px;}
+a:active, a:focus{
+    outline: none !important;
+}
+
+.hentry{
+    border-bottom: 1px #333 dotted !important;
+}
+/* --E-- phan cloumn  trong  */
+
+/* PHAN STYLE COLUMN CUA POST TYPE FORUM
+#post-1794 > .column-content{ width: 330px; }
+#post-1794 > .column-title{  width: 210px; }
+#post-1794 > .column-status{  width: 80px;  }
+#post-1794 > .column-comments{ width: 40px !important;}
+#post-1794 > .column-tags{ width: 30px;}
+#post-1794 > .column-category{ width: 100px !important;}
+#post-1794 > .column-author{ width: 50px !important;} */
+
+/* l================== GRID TRONG ADMIN===============*/
+#the-list td{
+    border-bottom: 1px scrollbar dotted;
+}
+#the-list th{
+    border-bottom: 1px scrollbar dotted;
+}
+
+
+#the-list tr:hover{
+    background-color: #E8F6FF;
+}
+
+/* PHAN SUA GIRD TRONG ADMIN */
+.widefat td{
+    vertical-align: middle !important;
+}
+
+.widefat th{
+    vertical-align: middle !important;
+}
+/* popup */
+.lbl_3{
+    float: left; 
+    width: 10%; 
+    text-align: center;
+}
+
+.ui-datepicker-year
+{
+    display: block;
+}
+
+/*  26/04/16 AN DI PHAN UPDATE WORDPRESS TRONG ADMIN */
+.update-nag{
+    display: none;
+}
+
+#footer-upgrade{
+    display: none;
+}
+
+#guests-meta-box{
+    overflow:  auto;
+}
+
+.uncheck_in{
+    cursor:  pointer;
+}
+
+tr.report {
+    height: 40px; 
+    border-bottom:  #000 solid 1px; font-size: 15px
+}
+tr.report:nth-child(even) {background: #DEE1E5}
+tr.report:nth-child(odd) {background: #FFF}
+
+.column-img{
+    width: 100px;
+}
+.column-fullname{
+    width: 90px;
+}
+.column-country, .column-branch, .column-checkin,.column-barcode, .column-phone {
+    width: 100px;
+}
+
+.column-position, .column-createdate {
+    width: 80px;
+}
+
+
+.column-email {
+    width: 210px
+}
+
+#show-img{
+    background-position: center center;
+    float: left;
+    margin-bottom: -2px     ;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    background-size: cover;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+}
+
+.check-icon{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: green;
+}
+
+.status-active {background: #708858;width: 20px; height: 20px;   border-radius: 10px;}
+.status-inactive {background: #885858 ;width: 20px; height: 20px;   border-radius: 10px;}

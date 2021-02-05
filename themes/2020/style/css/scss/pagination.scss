@@ -1,0 +1,67 @@
+ul.pro-pagination{
+    display: flex;
+    justify-content: flex-end;  
+    li{
+        min-width: 3rem;
+        border: 1px #ccc solid;
+        margin:  0.2rem;
+        border-radius: 2px;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        
+        a{    
+            background-color: #d4cdcd;
+            color: #747272;
+            display: block;
+            position: relative;
+            padding: 0.8rem 0;
+            &:hover {
+                background-color:#c1bcbc;
+                color: white !important;
+                text-decoration: none;
+            }
+        }
+
+    }
+    .selected{
+        color: #ccc;
+        background-color:#e2e1e1;
+        padding: 0.8rem 0;
+        border: 1px #ece8e8 solid;
+    }
+
+}
+
+
+ul.single-pagination {
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 22px;
+    height: 5px ;
+    li{
+        float: left;
+        width: 15px;
+        color: white;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 0px;
+        &:hover {
+            color: #666666 !important;
+        }
+
+        a{
+            display: block;
+            position: relative;
+
+        }
+    }
+    .selected2{
+        font-weight: bold;
+        color: #ccc;
+    }
+}
+
+
+

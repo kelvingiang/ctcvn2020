@@ -1,0 +1,90 @@
+.row-all{
+    padding: .3rem 1rem;
+}
+
+.row-one-clo {
+    padding: 0.5rem;
+    display: flex;
+
+    .cell-one{
+        width: 20%   
+    }   
+
+    .cell-two{
+        width: 80%
+    }
+}
+
+.row-four-clo {
+    padding: 0.5rem;
+    display: flex;
+
+    .cell-one{
+        width: 20%   
+    }   
+
+    .cell-two{
+        width: 30%
+    }
+
+    .cell-three{
+        width: 20%;
+        text-align: right;
+        label{
+            padding-right: 2.5rem;
+        }
+    }   
+
+    .cell-four{
+        width: 30%
+    }
+}
+.row-one-clo, row-four-clo{
+    input[type=text]{
+        width: 100%;
+        height: 2.5rem;
+    }
+}
+
+.label-admin{
+    color: $label-admin-color;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    padding-top: 10px;
+}
+
+
+
+.admin-link{
+    font-weight:  bold;
+    color: #2AA1FC;
+    font-size: 15px;
+    &:hover{
+        color: #035CAF; 
+    }
+}
+
+h2.hndle{
+    color: $metabox-color;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+
+}
+
+#show-img{
+    background-position: center center;
+    float: left;
+    margin: 0rem 2rem;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    background-size: cover;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+}
+
+
+#wpfooter{
+    display: none;
+}

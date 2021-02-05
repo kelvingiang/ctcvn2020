@@ -1,0 +1,21 @@
+/* 
+    Document   : metabox
+    Created on : 2016/4/12, 下午 01:59:53
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*root { 
+    display: block;
+}*/
+
+.mightway-mb-wrap{
+overflow-x:  auto;    
+}
+
+.mightway-mb-wrap label{
+    display: block;
+    font-weight:  bold;
+    margin-bottom: 3px;
+}

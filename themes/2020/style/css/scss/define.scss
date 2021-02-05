@@ -1,0 +1,24 @@
+$linkColor : #fc6e02;
+$linkNormal : rgba($linkColor, 0.8);
+$linkHover : rgba($linkColor, 1);
+
+
+
+@mixin box-link(){
+    li {
+        border-bottom:  2px #ccc solid;
+        .box {
+            text-align:  center;
+            img{
+                margin-top:10px;
+                max-width: 45%;
+                max-height: 210px;
+            }
+            label{
+                margin-top: .5rem;
+                font-size: 1.6rem;
+                letter-spacing: .3rem;
+            }
+        }
+    }
+}
