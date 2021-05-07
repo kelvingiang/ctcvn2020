@@ -1,4 +1,4 @@
-<?php ob_start();  // neu bao loi PHP Warning: Cannot modify header information ??headers already sent by    ?>
+<?php ob_start();  // neu bao loi PHP Warning: Cannot modify header information ??headers already sent by          ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -62,20 +62,22 @@
                         <img src="<?php echo get_image('logo.jpg') ?>" alt="ctcvn_logo" title="ctcvn_logo"/>
                     </a> 
                 </div>
-                <div class="login-speac mai-space">
-                    <img class="mai-img" src="<?php echo get_image('top-mail.png') ?>" />
-                </div>
+
             </div>
             <?php if (!is_page('check-in') && !is_page('check_in')) { ?>
-                <div>
-                    <div><?php get_template_part('templates/template', 'menu') ?></div>
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <?php get_template_part('templates/template', 'menu') ?>
+                    </div>
+                    </hr>  
+                    <div class="col-lg-12 col-12">
+                        <?php get_template_part('templates/template', 'brach-logo'); ?>
+                    </div>
                 </div>
-
-                </hr>  
             </div>
             <div class=" container-fluid">
                 <div style="margin: 0px 10px 0px 10px">
-                    <?php get_template_part('templates/template', 'sli-brach'); ?>
+
                     <?php
                     if (is_page()) {
                         // get_template_part('templates/template', 'advertising');

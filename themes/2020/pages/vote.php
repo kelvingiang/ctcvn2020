@@ -164,7 +164,7 @@ if (!isset($_SESSION['voteLogin'])) {
                     </div> 
                     <div class="col-lg-12" >
                         <div class="vote-title-bg-sub"> 
-                            <label class="vote-title-text-sub">理事候選明單</label>
+                            <label class="vote-title-text-sub">會長候選明單</label>
                         </div>
                         <div class="col-lg-12">
                             <div id="lishiSpace" class="list_vote row">
@@ -197,7 +197,7 @@ if (!isset($_SESSION['voteLogin'])) {
                                             <?php echo $item['company'] ?>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
-                                            <img src="<?php echo HCM_URI_IMAGES . '/vote/' . $item['img'] ?>"/>
+                                            <img src="<?php echo WB_URL_IMAGES_VOTE  . $item['img'] ?>"/>
                                         </div>
                                     </div>
                                 <?php } ?>
@@ -207,7 +207,7 @@ if (!isset($_SESSION['voteLogin'])) {
                     <div class="col-lg-12" style=" height: 30px"></div>
                     <div class="col-lg-12">
                         <div class="vote-title-bg-sub"> 
-                            <label class="vote-title-text-sub">監事候選明單</label>
+                            <label class="vote-title-text-sub">監事長候選明單</label>
                         </div>
                         <div class="col-lg-12">
                             <div id="jianshiSpace" class="list_vote row" >
@@ -240,7 +240,7 @@ if (!isset($_SESSION['voteLogin'])) {
                                             <?php echo $item['company'] ?>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
-                                            <img src="<?php echo HCM_URI_IMAGES . '/vote/' . $item['img'] ?>"/>
+                                            <img src="<?php echo WB_URL_IMAGES_VOTE . $item['img'] ?>"/>
                                         </div>
                                     </div>
                                 <?php } ?>

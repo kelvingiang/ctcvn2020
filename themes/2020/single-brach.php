@@ -26,7 +26,7 @@ $postMeta = get_post_meta($post->ID);
         });
 
         var myWindowOptions = {
-            content: '<?php echo get_option("info-name") ?>'
+            content: '<?php echo get_the_title() ?>'
         };
 
         var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
@@ -80,9 +80,12 @@ $postMeta = get_post_meta($post->ID);
                     </div>
 
                     <div class="col-md-12">
-                        <label class="label-title"> 網站  : </label>
-                        <a style="font-weight: bold" href="http://<?php echo $postMeta['b_website'][0]; ?>" target="_bank"><?php echo $postMeta['b_website'][0]; ?></a>  
+                        <label class="label-title"> 臉書  : </label>
+                        <a style="font-weight: bold" href="<?php echo $postMeta['b_fanpage'][0]; ?>" target="_bank">
+                            <?php echo $postMeta['b_fanpage'][0]; ?>
+                        </a>
                     </div>
+
 
                     <div class="col-md-12">
                         <label class="label-title"> 地址 : </label>
@@ -106,7 +109,14 @@ $postMeta = get_post_meta($post->ID);
     </div>
 </div>
 
+<script>
+    jQuery(document).ready(function () {
 
+        jQuery('body,html').stop(false, false).animate({
+            scrollTop: 500
+        }, 1000);
+    });
+</script>
 
 
 

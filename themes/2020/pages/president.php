@@ -33,7 +33,7 @@ global $wpdb;
         ?>
         <div class='head-title'>
             <div class="title">
-                <h2 class="head"> 歷 屆 會 長ss </h2>
+                <h2 class="head"> 歷 屆 會 長 </h2>
             </div>
         </div>
         <div>

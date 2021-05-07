@@ -27,6 +27,7 @@ class Admin_Metabox_Brach {
         $b_address = get_post_meta($post->ID, 'b_address', true);
         $b_email = get_post_meta($post->ID, 'b_email', true);
         $b_website = get_post_meta($post->ID, 'b_website', true);
+        $b_fanpage = get_post_meta($post->ID, 'b_fanpage', true);
         $b_x = get_post_meta($post->ID, 'b_x', true);
         $b_y = get_post_meta($post->ID, 'b_y', true);
         ?>
@@ -80,6 +81,16 @@ class Admin_Metabox_Brach {
                 <input type="text"   name="b_email" id="b_email" value="<?php echo $b_email; ?>" />
             </div>
         </div>
+
+        <div class="row-one-clo">
+            <div class="cell-one"> 
+                <label for="b_tel" class="label-admin"><?php _e('Fanpage', 'suite'); ?></label>
+            </div>
+            <div class="cell-two">
+                <input type="text"   name="b_fanpage" id="b_fanpage" value="<?php echo $b_fanpage; ?>" />
+            </div>
+        </div>
+
 
         <div class="row-one-clo">
             <div class="cell-one"> 
@@ -145,6 +156,11 @@ class Admin_Metabox_Brach {
                 if (isset($_POST['b_website'])) {
                     update_post_meta($post_id, 'b_website', $_POST['b_website']);
                 }
+
+                if (isset($_POST['b_fanpage'])) {
+                    update_post_meta($post_id, 'b_fanpage', $_POST['b_fanpage']);
+                }
+
 
 
                 if (isset($_POST['b_x'])) {

@@ -127,16 +127,20 @@ if (isPost()) {
             <form name="f_vote_login" id="f_vote_login" method="post" action="">
                 <div class="row">
                     <div class="col-lg-12">
-                        <label class="vote-title-text"><?php echo get_option('_vote_title'); ?></label>
+                        <label class="vote-title-text">
+                            <?php// echo get_option('_vote_title'); ?>
+                            台灣商會網上投票系統
+                        </label>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" style="margin-bottom: 3rem">
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-md-12 col-xs-12"> <label> 帳號 </label></div>
                             <div class="col-lg-7 col-md-6 col-md-12 col-xs-12" ><input type="text" name="txt-name" id="txt-name" class=" form-control" /></div>
                             <div class="col-lg-3 col-md-4 col-md-12 col-xs-12"> <label name="user-error" id="user-error" class="vote-error"></label></div>
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    
+                    <div class="col-lg-12" style="margin-bottom: 3rem">
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-md-12 col-xs-12"><label> 密碼 </label></div>
                             <div class="col-lg-7 col-md-6 col-md-12 col-xs-12"><input type="password" name="txt-pass" id="txt-pass" class="form-control"/></div>

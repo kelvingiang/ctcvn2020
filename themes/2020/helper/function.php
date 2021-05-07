@@ -341,7 +341,7 @@ function updateVoteCount($id) {
     global $wpdb;
     /* PLUS VOTE COUNT */
     $table = $wpdb->prefix . 'vote';
-    $updateSql = "UPDATE $table SET total=total + 1 WHERE ID=$id";
+    $updateSql = "UPDATE $table SET agree=agree + 1 WHERE ID=$id";
     $wpdb->query($updateSql);
 }
 
@@ -349,7 +349,8 @@ function userVoteSuccess() {
     global $wpdb;
     /* SET USER VOTED */
     $table = $wpdb->prefix . 'guests';
-    $updateSql = "UPDATE $table SET check_in = 1 WHERE ID = " . $_SESSION['voteLogin']['ID'];
+    $updateSql = "UPDATE $table SET vote = 1 WHERE ID = " . $_SESSION['voteLogin']['ID'];
+
     $wpdb->query($updateSql);
 
     unset($_SESSION['voteLogin']);
@@ -368,8 +369,9 @@ function kid_name($id) {
 function voteLogin($user, $pass) {
     global $wpdb;
     $table = $wpdb->prefix . 'guests';
-    $sql = "SELECT ID, full_name, barcode, stt FROM $table WHERE `stt` = $user AND `barcode` = $pass AND `status` = 1 AND `check_in` = 0";
+    $sql = "SELECT ID, full_name, barcode, serial FROM $table WHERE `full_name` = '$user' AND `barcode` = '$pass' AND `status` = 1 AND `vote` = 0";
     $row = $wpdb->get_row($sql, ARRAY_A);
+
     if (!empty($row)) {
         $_SESSION['voteLogin'] = $row;
         wp_redirect(home_url('vote'));

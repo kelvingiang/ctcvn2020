@@ -5,17 +5,17 @@
 ?>
 
 <?php
-foreach ($_POST as $key => $val) {
-    updateVoteCount($key);
-}
+if (!isset($_SESSION['voteLogin'])) {
+    wp_redirect(home_url('vote-login'));
+} else {
+    foreach ($_POST as $key => $val) {
+        updateVoteCount($key);
+    }
 
-//if (!isset($_SESSION['voteLogin'])) {
-//    wp_redirect(home_url('vote-login'));
-//} else {
-//    userVoteSuccess();
-//    VoteTotalLishi();
-//    VoteTotalJianshi();
-//}
+    userVoteSuccess();
+   VoteTotalLishi();
+   VoteTotalJianshi();
+}
 ?>
 <style>
     .main{
@@ -48,7 +48,8 @@ foreach ($_POST as $key => $val) {
 <script type="text/javascript">
 
     function Redirect() {
-        window.location = "<?php echo HCM_URL ?>vote-result";
+        // window.location = "<?php echo HCM_URL ?>vote-result";
+        window.location = "vote-result";
     }
 
     document.write("You will be redirected to main page in 10 sec.");

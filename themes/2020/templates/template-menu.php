@@ -15,6 +15,7 @@ if (isset($_SESSION['login'])) {
 <div  id="menu-moblie" >
     <div id="show_menu" > 選 項 </div>
     <?php suite_menu('mobile-menu') ?> 
+    <div style="clear: both"></div>
 </div>
 
 <script type="text/javascript">
