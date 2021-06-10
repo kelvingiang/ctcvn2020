@@ -48,7 +48,7 @@
     jQuery("#flexisel-breach").flexisel({
         visibleItems: <?php echo $item ?>,
         animationSpeed: 1000,
-        autoPlay: false,
+        autoPlay: true,
         autoPlaySpeed: 3000,
         pauseOnHover: true,
         enableResponsiveBreakpoints: true,

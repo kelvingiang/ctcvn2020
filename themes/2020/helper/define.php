@@ -19,6 +19,7 @@ define('EXPORT_DIR', THEME_URL . DS . 'export' . DS);
 define('WB_DIR_IMAGES', THEME_URL . DS . 'images' . DS);
 define('WB_DIR_GUESTS', THEME_URL . DS . 'images' . DS . 'guests' . DS);
 define('WB_DIR_APPLY', THEME_URL . DS . 'images' . DS . 'apply' . DS);
+define('WB_DIR_FILE', THEME_URL . DS . 'file' . DS );
 define('WB_DIR_MEMBER', THEME_URL . DS . 'images' . DS . 'member' . DS);
 define('WB_DIR_IMAGES_VOTE', THEME_URL . DS . 'images' . DS . 'vote' . DS);
 define('WB_DIR_IMAGES_AVATA', THEME_URL . DS . 'images' . DS . 'avata' . DS);
@@ -26,6 +27,7 @@ define('WB_DIR_IMAGES_AVATA', THEME_URL . DS . 'images' . DS . 'avata' . DS);
 
 /* === PART TRUC TIEP  ====== */
 
+define('WB_URL_FILE', THEME_PART . '/file/');
 define('WB_URL_ICON_DIR', THEME_PART . '/icon/');
 define('WB_URL_IMAGES', THEME_PART . '/images/');
 define('WB_URL_IMAGES_QRCODE', THEME_PART . '/images/qrcode/');

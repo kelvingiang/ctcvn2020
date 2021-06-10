@@ -5,7 +5,7 @@ if (!empty(getParams('id'))) {
     $data = $model->get_item(getParams());
 }
 ?>
-<?php ?>
+
 <?php
 require_once (MODEL_DIR . 'check_in_model.php');
 $model = new Admin_Check_In_Model();

@@ -7,6 +7,7 @@ class Admin_Main_controler {
 
     public function __construct() {
         $defaultoption = array(
+            'download_controler' => TRUE,
             'silder_controler' => TRUE,
             'brach_controler' => TRUE,
             'apply_controler' => TRUE,
@@ -30,6 +31,7 @@ class Admin_Main_controler {
         );
 
         $this->_controler_options = get_option($this->_controler_name, $defaultoption);
+        $this->download_page();
         $this->silder_post();
         $this->brach_post();
         $this->apply_post();
@@ -58,6 +60,13 @@ class Admin_Main_controler {
 
     public function do_output_buffer() {
         ob_start();
+    }
+
+    public function download_page() {
+        if ($this->_controler_options['download_controler'] == TRUE) {
+            require_once (CONTROLER_DIR . 'download_controler.php');
+            new Admin_Download_Controler();
+        }
     }
 
     public function silder_post() {

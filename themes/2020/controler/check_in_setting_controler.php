@@ -118,6 +118,7 @@ class Admin_Check_In_Setting_Controler {
                 $model = new Admin_Check_In_Setting_model();
                 $model->ImportGuests($excelList);
                 
+                
           $paged = max(1, $arrParams['paged']);
           $url = 'admin.php?page=' . 'tw_checkin' . '&paged=' . $paged . '&msg=1';
             //$url = 'admin.php?page=' . $_REQUEST['page'] . '&paged=' . $paged . '&msg=1';

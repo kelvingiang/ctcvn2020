@@ -1,4 +1,4 @@
-<?php ob_start();  // neu bao loi PHP Warning: Cannot modify header information ??headers already sent by          ?>
+<?php ob_start();  // neu bao loi PHP Warning: Cannot modify header information ??headers already sent by             ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -65,23 +65,22 @@
 
             </div>
             <?php if (!is_page('check-in') && !is_page('check_in')) { ?>
-                <div class="row">
-                    <div class="col-lg-12 col-12">
-                        <?php get_template_part('templates/template', 'menu') ?>
-                    </div>
-                    </hr>  
-                    <div class="col-lg-12 col-12">
-                        <?php get_template_part('templates/template', 'brach-logo'); ?>
-                    </div>
+                <div>
+                    <?php get_template_part('templates/template', 'menu') ?>
+                </div>
+                </hr>  
+                <div>
+                    <?php get_template_part('templates/template', 'brach-logo'); ?>
                 </div>
             </div>
-            <div class=" container-fluid">
-                <div style="margin: 0px 10px 0px 10px">
+        <?php } ?>
+    </div>
+    <div class=" container-fluid">
+        <div style="margin: 0px 10px 0px 10px">
 
-                    <?php
-                    if (is_page()) {
-                        // get_template_part('templates/template', 'advertising');
-                    }
-                }
-                ?>
-            </div>
+            <?php
+            //  if (is_page()) {
+            // get_template_part('templates/template', 'advertising');
+            //  }
+            ?>
+        </div>
