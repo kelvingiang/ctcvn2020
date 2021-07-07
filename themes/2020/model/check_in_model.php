@@ -498,7 +498,7 @@ class Admin_Check_In_Model extends WP_List_Table {
             if ($file_size > 2097152) {
                 $errors[] = '上傳檔案容量不可大於 2 MB';
             }
-            $path = WP_CONTENT_DIR . DS . 'themes' . DS . 'suite' . DS . 'images' . DS . 'guests' . DS; // get function path upload img dc khai bao tai file hepler
+         //   $path = WB_DIR_GUESTS; // get function path upload img dc khai bao tai file hepler
 
             if (empty($errors) == true) {
                 //=== upload hinh ==============================
@@ -506,7 +506,7 @@ class Admin_Check_In_Model extends WP_List_Table {
                 if (is_file(WB_DIR_GUESTS . $arrData['hidden_img'])) {
                     unlink(WB_DIR_GUESTS . $arrData['hidden_img']);
                 }
-                move_uploaded_file($file_tmp, ( $path . $cus_name));
+                move_uploaded_file($file_tmp, ( WB_DIR_GUESTS . $cus_name));
             } else {
                 return $errors;
             }

@@ -52,6 +52,7 @@ class Admin_Download_Model extends WP_List_Table {
             'cb' => '<input type="checkbox" />',
             'title' => '票提',
             'img' => '照片',
+            'kind' => '類型',
             'file' => '檔名',
         );
         return $arr;
@@ -65,7 +66,7 @@ class Admin_Download_Model extends WP_List_Table {
     // COLUMN SAP XEP THU TANG HOAC GIAM DAN
     public function get_sortable_columns() {
         return array(
-            'title' => array('title', true),
+            'kind' => array('kind', true),
             'id' => array('id', true),
         );
     }
@@ -229,13 +230,18 @@ class Admin_Download_Model extends WP_List_Table {
 
     public function column_img($item) {
 
-
         // TAO SECURITY CODE
         $src = WB_URL_IMAGES . 'download/' . $item['img'];
 
         $html = '<img alt="" src=" ' . $src . ' "  style=" width:100px" />';
 
         return $html;
+    }
+
+    public function column_kind($item) {
+
+        // TAO SECURITY CODE
+        echo download_name($item['kind']);
     }
 
     //CAC COLUMN MAC DINH KHI LOAD TRANG SE SHOW LEN 
@@ -265,10 +271,11 @@ class Admin_Download_Model extends WP_List_Table {
             'title' => $arrData['txt_title'],
             'file' => $fileName,
             'img' => $fileImg,
-            'create_date' => date('Y-m-d'),
+            'kind' => $arrData['sel_kind'],
         );
 
         if ($option == 'add') {
+            $data['create_date'] = date('Y-m-d');
             $wpdb->insert($table, $data);
         } else if ($option == 'edit') {
             $where = array('ID' => absint($arrData['hid_ID']));  // CHUYEN THEM DK DE UPDATE 

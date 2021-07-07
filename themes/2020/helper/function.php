@@ -67,6 +67,9 @@ function get_country($countryCode) {
         case '0040':
             $country = '河內分會';
             break;
+        case '0808':
+            $country = '青商會';
+            break;
     }
     return $country;
 }
@@ -428,6 +431,18 @@ function kid_name($id) {
         $val = "總會長";
     } elseif ($id == 2) {
         $val = '監事長';
+    }
+    return $val;
+}
+
+function download_name($id) {
+    switch ($id) {
+        case '1':
+            $val = '會刊';
+            break;
+        case '2':
+            $val = '人物專訪';
+            break;
     }
     return $val;
 }

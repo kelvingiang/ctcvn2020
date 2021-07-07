@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Download Page
+  Template Name: Download Interview Page
  */
 ?>
 <?php
@@ -44,7 +44,7 @@ get_header();
     <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-12">
         <div class='head-title'>
             <div class="title">
-                <h2 class="head"> <?php _e('總會會刊') ?> </h2>
+                <h2 class="head"> <?php _e('人物專訪') ?> </h2>
             </div>
         </div>
         <div>
@@ -53,7 +53,7 @@ get_header();
 
         <?php
         $table = $wpdb->prefix . 'download';
-        $sql = "SELECT * FROM $table WHERE kind = 1";
+        $sql = "SELECT * FROM $table WHERE kind = 2";
         $downloadList = $wpdb->get_results($sql, ARRAY_A);
         ?>
         <div class="download-space">

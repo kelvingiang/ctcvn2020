@@ -26,13 +26,31 @@ $page = getParams('page');
                 </tr>
             </tbody>
             <tbody>
+                <tr>
+                    <th scope="row">
+                        <label>類型</label>
+                    </th>
+                    <td>
+                        <select id="sel_kind" name="sel_kind" >
+                            <?php
+                            require_once CODES_DIR . 'my_list.php';
+                            $myList = new my_list();
+                            foreach ($myList->DownloadList() as $key => $val) {
+                                ?>
+                                <option <?php echo $item['kind'] == $key ? 'selected' : '' ?>  value= "<?php echo $key ?>"><?php echo $val ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
                 <tr style="border-bottom: 1px solid #000; border-top:  1px solid #000">
                     <th scope="row">
                         <label>照片</label>
                     </th>
                     <td>
                         <div id="show-img" 
-                             style=" background-image: url('<?php echo WB_URL_IMAGES .'/download/'. $item['img']; ?>');">
+                             style=" background-image: url('<?php echo WB_URL_IMAGES . '/download/' . $item['img']; ?>');">
                         </div>  
                         <input type="file" id="img_upload" name="img_upload" />
                     </td>
