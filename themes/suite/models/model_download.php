@@ -258,7 +258,7 @@ class Admin_Model_Download extends WP_List_Table
     {
 
         // TAO SECURITY CODE
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
         echo $myList->Get_download($item['kind']);
     }

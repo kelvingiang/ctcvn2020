@@ -1,7 +1,9 @@
 <?php
 
-function getTranslate() {
+function getTranslate()
+{
     $data = array(
+        'language' => 'English Profile',
         'Featured Project' => 'Dự án tiêu biểu',
         'News' => 'Tin Mới',
         'About page' => 'About us',
@@ -74,8 +76,8 @@ function getTranslate() {
         '404 Not Fount' => 'Không tìm thấy trang yêu cầu',
         'Call phone ask Price' => 'Gọi',
     );
-    
-     $dataOnline = array(
+
+    $dataOnline = array(
         'Online' => 'Online',
         'Visitor' => 'Visitor',
     );

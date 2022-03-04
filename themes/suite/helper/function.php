@@ -9,18 +9,23 @@ function curl_get_contents($url)
     $html = curl_exec($ch);
     $data = curl_exec($ch);
     curl_close($ch);
-    //    echo $url;
-    //    die();
+
     return $data;
 }
 
-require_once DIR_HELPER . 'code/admin_function.php';
+require_once(DIR_CODES . 'admin-function.php');
+require_once(DIR_CODES . 'admin-add-post-taxonomy-field.php');
 
-require_once(DIR_CODES . 'function_post_list.php');
-require_once(DIR_CODES . 'function_vote.php');
-require_once(DIR_CODES . 'function_upload.php');
+require_once(DIR_CODES . 'forum-cmd-ui.php');
 
-require_once DIR_HELPER . 'code/admin-add-post-taxonomy-fieild.php';
+require_once(DIR_CODES . 'function-post-list.php');
+require_once(DIR_CODES . 'function-vote.php');
+require_once(DIR_CODES . 'function-upload.php');
+
+//=====2022=====================
+require_once(DIR_CODES . 'function-menu.php');
+require_once(DIR_CODES . 'meta-recruit.php');
+
 /* ======  GET  HINH THEO PATH ========= */
 
 function get_member_img($img = '')
@@ -48,62 +53,7 @@ function ToBack($num = 1)
     wp_redirect($url);
 }
 
-/* NHAN ID TRA VE TEN CAC PHAN HOI */
 
-// function get_country($countryCode)
-// {
-//     switch ($countryCode) {
-//         case '0001':
-//             $country = '越南總會';
-//             break;
-//         case '0080':
-//             $country = '胡志明分會';
-//             break;
-//         case '0390':
-//             $country = '河靜分會';
-//             break;
-//         case '0640':
-//             $country = '頭頓分會';
-//             break;
-//         case '0081':
-//             $country = '新順分會';
-//             break;
-//         case '0241':
-//             $country = '北寧分會';
-//             break;
-//         case '0660':
-//             $country = '西寧分會';
-//             break;
-//         case '0720':
-//             $country = '隆安分會';
-//             break;
-//         case '0650':
-//             $country = '平陽分會';
-//             break;
-//         case '0610':
-//             $country = '同奈分會';
-//             break;
-//         case '0630':
-//             $country = '林同分會';
-//             break;
-//         case '0511':
-//             $country = '峴港分會';
-//             break;
-//         case '0310':
-//             $country = '海防分會';
-//             break;
-//         case '0360':
-//             $country = '太平分會';
-//             break;
-//         case '0040':
-//             $country = '河內分會';
-//             break;
-//         case '0808':
-//             $country = '青商會';
-//             break;
-//     }
-//     return $country;
-// }
 
 /* KIEM TRA DU LIEU CO CHINH XAC VA LOI KHONG */
 
@@ -252,40 +202,3 @@ function remove_jquery_migrate($scripts)
 }
 
 add_action('wp_default_scripts', 'remove_jquery_migrate');
-
-
-// function download_name($id)
-// {
-//     switch ($id) {
-//         case '1':
-//             $val = '會刊';
-//             break;
-//         case '2':
-//             $val = '人物專訪';
-//             break;
-//     }
-//     return $val;
-// }
-
-/* * ********************
- * GET SRC OF IMAGES
- * ******************* */
-
-/* === get url ==============  */
-
-
-
-// function get_lib_uri($name = '')
-// {
-//     return get_template_directory_uri() . '/class/' . $name;
-// }
-
-// function get_workshop_uri($name = '')
-// {
-//     return get_template_directory_uri() . '/lib/PHPImageWorkshop/' . $name;
-// }
-
-// function get_avata($name)
-// {
-//     return DIR_IMAGES . 'avata' .  DS . $name;
-// }

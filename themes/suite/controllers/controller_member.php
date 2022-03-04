@@ -106,7 +106,7 @@ class Admin_controller_Member
         }
 
         if ($columns == 'member_country') {
-            require_once DIR_CODES . 'my_list.php';
+            require_once DIR_CODES . 'my-list.php';
             $myList = new Codes_My_List();
             echo '<p>';
             echo '<a href=" ' . admin_url('/edit.php?post_type=member&s=' . get_post_meta($post->ID, 'm_country', true)) . ' ">' . $myList->get_country(get_post_meta($post->ID, 'm_country', true)) . '</a>';

@@ -3,6 +3,8 @@
 function getTranslate()
 {
     $data = array(
+        'language' => '中文檔案',
+        'Branch Ha Noi' => '河內分會',
         // phan trang login
         'User Login' => '會員登入',
         'Login' => '登入',

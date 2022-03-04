@@ -1,61 +1,78 @@
-@mixin Respond($breakpoint){
-    @if $breakpoint == phone {
-        @media (max-width:600px){@content};
+@mixin Respond($breakpoint) {
+    @if $breakpoint == xs {
+        @media (max-width: 575.98px) {
+            @content;
+        }
     }
-    @if $breakpoint == tab-port {
-        @media (max-width:900px) {@content};
+
+    @if $breakpoint == sm {
+        @media (max-width: 767.98px) {
+            @content;
+        }
     }
-    @if $breakpoint == tab-land {
-        @media (max-width:1200px){@content};
+
+    @if $breakpoint == md {
+        @media (max-width: 991.98px) {
+            @content;
+        }
     }
-    @if $breakpoint == big-desktop{
-        @media (min-width:1800px){@content};
+
+    @if $breakpoint == lg {
+        @media (max-width: 1199.98px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xl {
+        @media (min-width: 1200px) {
+            @content;
+        }
     }
 }
+
 //====== index page ===============================================
-.index-friend-speac{
-    @include Respond(big-desktop){
+.index-friend-space {
+    @include Respond(xl) {
         display: block;
     }
-    @include Respond(tab-land){
-        display: none
-    }
-
-}
-
-.index-friend-speac-sidebar{
-    @include Respond(big-desktop){
+    @include Respond(lg) {
         display: none;
     }
-    @include Respond(tab-land){
-        display: block;
-    }
 }
 
-.index-silder-index{
-    @include Respond(big-desktop){
-        display: block;
-    }
-
-    @include Respond(tab-land){
-        display: block;
-    }
-}
-
-.index-advertising-speac{
-    @include Respond(tab-land){
-        display: block;
-    }
-    @include Respond(tab-port){
-        display: block;
-    }
-}
-
-.index-advertising-speac-sidebar{
-     @include Respond(tab-land){
+.index-friend-space-sidebar {
+    @include Respond(xl) {
         display: none;
     }
-    @include Respond(tab-port){
+    @include Respond(lg) {
+        display: block;
+    }
+}
+
+.index-slider-index {
+    @include Respond(xl) {
+        display: block;
+    }
+
+    @include Respond(lg) {
+        display: block;
+    }
+}
+
+.index-advertising-space {
+    @include Respond(lg) {
+        display: block;
+    }
+    @include Respond(md) {
+        display: block;
+    }
+}
+
+.index-advertising-space-sidebar {
+    @include Respond(lg) {
+        display: none;
+    }
+    @include Respond(md) {
         display: block;
     }
 }

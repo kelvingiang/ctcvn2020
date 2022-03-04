@@ -33,7 +33,7 @@ $page = getParams('page');
                     <td>
                         <select id="sel_kind" name="sel_kind">
                             <?php
-                            require_once DIR_CODES . 'my_list.php';
+                            require_once DIR_CODES . 'my-list.php';
                             $myList = new Codes_My_List;
                             foreach ($myList->DownloadList() as $key => $val) {
                             ?>

@@ -1,144 +1,109 @@
-$menuColor :  #c30909;
-$menuHoverColor :  #de0000;
+$textColor: rgba(53, 52, 52, 0.6);
+$textSubColor: rgba(53, 52, 52, 0.8);
+$textHoverColor: rgba(53, 52, 52, 1);
 
-$menuTopColor : rgba($menuColor, 1);
-$menuBottomColor : rgba($menuColor, 0.5);
+#menu-computer {
+    nav {
+        &:after {
+            display: table;
+            content: " ";
+            clear: both;
+        }
+        .sf-menu {
+            background-color: transparent;
+            .menu-item {
+                background-color: transparent;
+                .sf-with-ul {
+                    &:after {
+                        border-top-color: $textColor;
+                    }
+                }
+                a {
+                    color: $textColor;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+                &:hover {
+                    .sf-with-ul {
+                        &:after {
+                            border-top-color: $textHoverColor;
+                        }
+                    }
+                    a {
+                        color: $textHoverColor;
+                    }
+                }
+            }
 
-$menuTopColorHorver : rgba($menuHoverColor, 0.5);
-$menuCenterColorHover : rgba($menuHoverColor, 0.8);
-$menuBottomColorHover : rgba($menuHoverColor, 1);
+            .sub-menu {
+                background-color: #ffffff;
+                .menu-item {
+                    border-bottom: 1px #dad7d7 dotted;
+                    a {
+                        color: $textColor;
+                    }
+                    &:hover {
+                        background-color: #fcfcfc;
+                        a {
+                            color: $textHoverColor;
+                        }
+                    }
+                }
+            }
 
-
-#menu-computer{
-    @include Respond(big-desktop){
-        display: block;
-    }
-    @include Respond(tab-land){
-        display: none
+            @include Respond(xl) {
+                display: block;
+            }
+            @include Respond(md) {
+                display: none;
+            }
+        }
     }
 }
 
-#menu-moblie{
+#menu-mobile {
     display: none;
-    @include Respond(big-desktop){
+
+    @include Respond(xl) {
         display: none;
     }
-    @include Respond(tab-land){
+    @include Respond(md) {
         display: block;
     }
-}
 
+    /*---E MENU CHINH:[PRIMARY MENU]:---*/
 
-
-.primary-menu{
-    background: linear-gradient($menuTopColor 0%, $menuBottomColor 100%);
-    &:after{
-        display: table;
-        content: " ";
-        clear: both;  
+    #show_menu {
+        cursor: pointer;
+        height: 30px;
+        background-color: rgb(121, 119, 119);
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        line-height: 30px;
     }
-    
-}
 
-.sf-menu{
-    margin-bottom: 0 !important;
-}
-
-
-.primary-menu ul{
-    /*border: 1px solid #fff;*/
-    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    background: #565656;
-    background: -moz-linear-gradient(#565656 0%, #323232 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #565656), color-stop(100%, #323232));
-    background: -webkit-linear-gradient(#565656 0%, #323232 100%);
-    background: linear-gradient(#565656 0%, #323232 100%);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    max-width: 100%;
-}
-
-.primary-menu ul li,
-.primary-menu ul li ul li {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
-    /*    background: blue;*/ 
-    background: -moz-linear-gradient(#286090 0%, #143149 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #286090), color-stop(100%, #143149));
-    background: -webkit-linear-gradient(#286090 0%, #143149 100%);
-    background: linear-gradient($menuTopColor 0%, $menuBottomColor 100%);
-}
-
-
-
-.primary-menu ul li a {
-    color: #D8D8D8;
-    border-top: none;
-    border-left: none;
-    font-weight:  bold;
-    padding: 10px 15px;
-    letter-spacing: 0.2rem;
-}
-.primary-menu ul li a:hover,
-
-.primary-menu ul li.sfHover  {
-    color: #FFFFFF;
-    background: -moz-linear-gradient(#244968 0%, #286090 70%, #143149 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #244968), color-stop(70%, #286090), color-stop(100%, #143149));
-    background: -webkit-linear-gradient(#244968 0%, #286090 70%, #143149 100%);
-    background: linear-gradient($menuTopColorHorver 0%, $menuCenterColorHover 70%, $menuBottomColorHover 100%);
-    text-decoration: none;
-}
-
-.primary-menu ul li ul {
-    width: auto;
-}
-/*---E MENU CHINH:[PRIMARY MENU]:---*/
-
-
-
-#show_menu {
-    cursor: pointer;
-    height: 30px;
-    background-color: red;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
-    font-weight:  bold;
-    line-height: 30px;
-        
-}
-
-/*MENU CHO RESPORST*/
-.mobile-menu{
-    margin-bottom: 20px !important;
-}
-
-.mobile-menu ul li {
-    height: 30px;
-    background-color: #040B96;
-    width: 50%;
-    float: left;
-    &:hover{
-          background-color: #E8E8EA;
+    /*MENU CHO RESPORST*/
+    #menu-mobile-menu {
+        .menu-item {
+            background-color: rgba(239, 243, 243, 0.89);
+            height: 30px;
+            width: 50%;
+            float: left;
+            a {
+                color: rgba(27, 27, 27, 0.5);
+                text-decoration: none;
+                font-weight: bold;
+                padding: 6px 25px;
+                text-align: center;
+            }
+            &:hover {
+                background-color: rgba(239, 243, 243, 1);
+                a {
+                    color: rgba(27, 27, 27, 1);
+                }
+            }
+        }
     }
 }
-
-
-.mobile-menu ul li a{
-    color: white;
-    text-decoration:  none;
-    font-weight: bold;
-    padding: 6px 25px; 
-    text-align: center;
-    &:hover{
-         color: blue;  
-    }
-}
-
-
-

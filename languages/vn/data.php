@@ -3,6 +3,7 @@
 function getTranslate()
 {
     $data = array(
+        'language' => 'Hồ Sơ Tiếng Việt',
         'Featured Project' => 'Dự án tiêu biểu',
         'News' => 'Tin Mới',
         'About page' => 'Giới Thiệu',

@@ -89,7 +89,7 @@ class Admin_Model_Check_In_Report_Back
         // TAO NOI DUNG CHEN TU DONG 2
         $i = 2;
         $list = $this->ReportView();
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
 
         foreach ($list as $row) {
@@ -139,7 +139,7 @@ class Admin_Model_Check_In_Report_Back
         // TAO NOI DUNG CHEN TU DONG 2
         $i = 2;
         $list = $this->BarcodeInfo();
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
         foreach ($list as $row) {
             $checkInDetail = $this->ReportDetailView($row['ID']);

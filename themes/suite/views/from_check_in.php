@@ -89,7 +89,7 @@ if (!empty($insert_id)) {
         <div class="cell-two">
             <select id="sel_Country" name="sel_country">
                 <?php
-                require_once DIR_CODES . 'my_list.php';
+                require_once DIR_CODES . 'my-list.php';
                 $myList = new Codes_My_List();
                 foreach ($myList->countryList() as $key => $val) {
                 ?>

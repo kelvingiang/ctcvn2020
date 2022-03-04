@@ -1,0 +1,14 @@
+#language-space {
+    display: flex;
+    flex-direction: row;
+    div {
+        color: rgba(121, 119, 119, 0.5);
+        margin: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            color: rgba(121, 119, 119, 1);
+        }
+    }
+}

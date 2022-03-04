@@ -155,7 +155,7 @@ class Admin_Metabox_Member
                 <div class="cell-text">
                     <select id="m_Country" name="m_country">
                         <?php
-                        require_once DIR_CODES . 'my_list.php';
+                        require_once DIR_CODES . 'my-list.php';
                         $myList = new Codes_My_List();
                         foreach ($myList->countryList() as $key => $val) {
                         ?>

@@ -1,5 +1,5 @@
 <?php
-require_once DIR_CODES . 'my_list.php';
+require_once DIR_CODES . 'my-list.php';
 $myList = new Codes_My_List();
 
 require_once(DIR_MODEL . 'model_check_in_report.php');

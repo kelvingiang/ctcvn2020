@@ -44,7 +44,7 @@ if (!empty($a_barcode)) {
         } else {
             $img = "<img id= 'guest-pic' name = 'guest-pic' src ='" . PART_IMAGES . 'logo.png' . "'/>";
         }
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
 
         $info = array(

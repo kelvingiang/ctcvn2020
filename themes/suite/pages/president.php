@@ -40,28 +40,29 @@ global $wpdb;
             <?php
             $currentBranch = '';
 
-            if ($wp_query->have_posts()):
+            if ($wp_query->have_posts()) :
                 $stt = 0;
-                while ($wp_query->have_posts()):
+                while ($wp_query->have_posts()) :
                     $wp_query->the_post();
                     $Branch = get_post_meta(get_the_ID(), '_president_branch', true);
-                    ?>
+            ?>
 
                     <?php
+                    $myList = new Codes_My_List();
                     if ($Branch != $currentBranch) {
-                        ?>
+                    ?>
                         <div class="my_list_title" data-target="<?php echo get_post_meta(get_the_ID(), '_president_branch', true) ?>">
-                            <label><?php echo get_country(get_post_meta(get_the_ID(), '_president_branch', true)); ?></label> 
-                        </div>  
+                            <label><?php echo $myList->get_country(get_post_meta(get_the_ID(), '_president_branch', true)); ?></label>
+                        </div>
 
-                        <?php
+                    <?php
                         $currentBranch = $Branch;
                     }
                     ?>
                     <div class="my_list_content <?php echo get_post_meta(get_the_ID(), '_president_branch', true) ?>">
-                        <div class ="row  my_list  ">
-                            <div class=" col-md-6 col-lg-6 col-sm-6 col-xs-12"> 
-                                <label style="margin-left: 10px; font-size: 18px"> <?php the_title(); ?></label> 
+                        <div class="row  my_list  ">
+                            <div class=" col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                <label style="margin-left: 10px; font-size: 18px"> <?php the_title(); ?></label>
                             </div>
                             <div class=" col-md-3 col-lg-3 col-sm-3 col-xs-6">
                                 <label style="margin-left: 10px"> <?php echo get_post_meta(get_the_ID(), '_president_year', true); ?> 年 度 </label>
@@ -71,12 +72,12 @@ global $wpdb;
                             </div>
                         </div>
                     </div>
-                    <?php
+            <?php
                     $stt++;
                 endwhile;
             endif;
             ?>
-        </div>                    
+        </div>
     </div>
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
         <?php get_sidebar() ?>
@@ -84,9 +85,9 @@ global $wpdb;
 </div>
 
 <script type="text/javascript">
-    jQuery(document).ready(function () {
+    jQuery(document).ready(function() {
         jQuery('.0001').slideDown();
-        jQuery('.my_list_title').click(function () {
+        jQuery('.my_list_title').click(function() {
             var _showClass = jQuery(this).data('target');
             var ss = "." + _showClass;
             jQuery('.my_list_content').slideUp('slow');
@@ -98,4 +99,3 @@ global $wpdb;
 <?php
 get_footer();
 ob_flush();   // neu bao loi PHP Warning: Cannot modify header information – headers already sent by
-                                                    

@@ -146,7 +146,7 @@ if (isset($suite['intNumArticlePerPage'])) {
         </div>
         <div style="min-height: 70px; padding-left: 50px; padding: 8px 1px; margin-left: 10px; margin-bottom: 10px; background-color: #ccc; border-radius: 3px" class="row">
             <?php
-            require_once DIR_CODES . '/my_list.php';
+            require_once DIR_CODES . 'my-list.php';
             $myList = new Codes_My_List;
             $placeList = $myList->PlaceList();
             $careerList = $myList->CareerList();

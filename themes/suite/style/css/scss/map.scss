@@ -1,0 +1,78 @@
+@keyframes example {
+    from {
+        color: rgba(255, 251, 251, 1);
+    }
+    to {
+        color: rgba(63, 63, 63, 1);
+    }
+}
+
+.map-space {
+    background-color: #ffffff; /* Used if the image is unavailable */
+    display: flex;
+    justify-content: center;
+    .map {
+        background-color: #ccc;
+        background-repeat: no-repeat, repeat;
+        background-image: url("../../../suite/images/mapvietnam/vietnam-map.png");
+        height: 940px;
+        width: 600px;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        position: relative;
+
+        @include Respond(xs) {
+            height: 700px;
+            width: 500px;
+        }
+
+        .hanoi {
+            position: absolute;
+            top: 11.8%;
+            left: 31.5%;
+
+            @include Respond(xs) {
+                top: 11.6%;
+                left: 30%;
+            }
+
+            .branch-img {
+                width: 100%;
+                @include Respond(xs) {
+                    width: 77%;
+                }
+            }
+
+            .branch-link {
+                position: absolute;
+                top: 40%;
+                left: 20%;
+
+                font-size: 1.2rem;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                white-space: nowrap;
+                text-decoration: none;
+
+                animation-name: example;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+
+                &:hover {
+                    animation-name: off-animation;
+                    transform: scale(1.2, 1.2);
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .branch {
+            transition: transform 1s;
+            transform-origin: center center;
+            &:hover {
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+}

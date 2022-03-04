@@ -237,7 +237,7 @@ root {
 /*PHAN CUA SLIDER*/
 .box_skitter_large {
   @include Respond(big-desktop) {
-    height: 500px !important;
+    height: 800px !important;
   }
 
   @include Respond(tab-land) {

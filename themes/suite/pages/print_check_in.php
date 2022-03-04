@@ -78,7 +78,7 @@ $checkInList = $model->AttenDetail();
             </tr>
 
             <?php
-            require_once DIR_CODES . 'my_list.php';
+            require_once DIR_CODES . 'my-list.php';
             $myList = new Codes_My_List();
             $stt = 1;
             foreach ($checkInList as $key => $val) {

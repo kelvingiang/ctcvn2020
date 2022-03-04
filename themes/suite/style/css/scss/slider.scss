@@ -1,0 +1,15 @@
+.border_box {
+    @include Respond(big-desktop) {
+        height: 800px !important;
+    }
+
+    @include Respond(tab-land) {
+        height: 300px !important;
+    }
+    @include Respond(tab-port) {
+        height: 300px !important;
+    }
+    @include Respond(phone) {
+        display: none;
+    }
+}

@@ -129,7 +129,7 @@ class Admin_Model_Check_In_Setting
 
     public function ExCheckInToExcel()
     {
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
 
         require_once DIR_CLASS . 'PHPExcel.php';
@@ -221,7 +221,7 @@ class Admin_Model_Check_In_Setting
 
     public function ExportBarcode()
     {
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
 
         require_once DIR_CLASS . 'PHPExcel.php';

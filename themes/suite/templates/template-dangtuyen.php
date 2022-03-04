@@ -347,7 +347,7 @@ if (!$_GET['del'] == '') {
                     </div>
                 </div>
                 <?php
-                require_once DIR_CODES . '/my_list.php';
+                require_once DIR_CODES . 'my_list.php';
                 $myList = new Codes_My_List();
                 $placeList = $myList->PlaceList();
                 $careerList = $myList->CareerList();

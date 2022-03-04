@@ -83,7 +83,7 @@ class Admin_Controller_President
             }
         }
         if ($columns == 'president_branch') {
-            require_once DIR_CODES . 'my_list.php';
+            require_once DIR_CODES . 'my-list.php';
             $myList = new Codes_My_List();
             echo $myList->get_country(get_post_meta($post->ID, "_president_branch", TRUE));
         }

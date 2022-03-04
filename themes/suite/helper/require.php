@@ -18,10 +18,7 @@ include_once(DIR_CODES . 'rewrite-url.php');
 new Codes_Rewrite_Url;
 
 
-
-
 /* CHUC NANG SEARCH TU TABLE POSTSMETA */
-require_once(DIR_CODES . 'search_by_meta_value.php');
-new Admin_Search_By_Meta_Vakue();
+require_once(DIR_CODES . 'search-by-meta-value.php');
+new Admin_Search_By_Meta_Value();
 
-include_once(DIR_CODES . 'forum_cmd_ui.php');

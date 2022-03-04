@@ -8,6 +8,8 @@ class Admin_Controller_Slider
         add_action('init', array($this, 'create'));
         add_action('manage_edit-slide_columns', array($this, 'ManageColumns'));
         add_action('manage_slide_posts_custom_column', array($this, 'RenderColumns'));
+
+        add_action('init', array($this, 'CreateTaxonomies'));
     }
 
     function create()
@@ -15,13 +17,13 @@ class Admin_Controller_Slider
         $labels = array(
             'name' => __('幻燈片  1000 x 400 '),
             'singular_name' => __('幻燈片'),
-            'add_new' => __('新增'),
-            'add_new_item' => __('新增'),
-            'edit_item' => __('修改'),
-            'new_item' => __('新增'),
-            'all_items' => __('全部幻燈片'),
-            'view_item' => __('顯示'),
-            'search_items' => __('搜尋'),
+            'add_new' => __('New'),
+            'add_new_item' => __('New'),
+            'edit_item' => __('Edit'),
+            'new_item' => __('New'),
+            'all_items' => __('All'),
+            'view_item' => __('View'),
+            'search_items' => __('Search'),
             'not_found' => __('搜不到任何資料'),
             'not_found_in_trash' => __('回收桶是空.'),
             'parent_item_colon' => '',
@@ -52,10 +54,10 @@ class Admin_Controller_Slider
         unset($columns['order']);
         unset($columns['language']);
         unset($columns['postdate']);
-        unset($columns['category']);
 
         $columns['img'] = __('Image');
         $columns['order'] = __('Order');
+        $columns['category'] = __('Category');
         $columns['postdate'] = __('Date');
 
         return $columns;
@@ -69,5 +71,45 @@ class Admin_Controller_Slider
                 the_post_thumbnail();
             }
         }
+
+        if ($columns == 'category') {
+            global $post;
+            $terms = wp_get_post_terms($post->ID, 'slide_category');
+
+            if (count($terms) > 0) {
+                foreach ($terms as $key => $term) {
+                    echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
+                }
+            }
+        }
+    }
+
+
+    public function CreateTaxonomies()
+    {
+        $labels = array(
+            'name' => __('Category'),
+            'singular_name' => __('Category'),
+            'search_items' => __('Search Categories'),
+            'all_items' => __('Category'),
+            'parent_item' => __('Parent'),
+            'parent_item_colon' => __('Parent'),
+            'edit_item' => __('Edit'),
+            'update_item' => __('Update'),
+            'add_new_item' => __('Add New'),
+            'new_item_name' => __('Add New'),
+            'menu_name' => __('Category')
+        );
+        register_taxonomy('slide_category', 'slide', array(
+            'hierarchical' => true,
+            'labels' => $labels,
+            'show_ui' => true,
+            'query_var' => true,
+            'taxonomy' => 'category',
+            'rewrite' => array(
+                'slug' => 'slide-category',
+                'hierarchical' => true,
+            )
+        ));
     }
 }

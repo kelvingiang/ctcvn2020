@@ -4,6 +4,9 @@
  *  @THEME_URL = lay duong dan thu muc theme
  *  @CORE      = lay duong dan thu muc core
  *  */
+
+use JetBrains\PhpStorm\Language;
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -21,6 +24,47 @@ require_once(HELPER . 'define.php');
 require_once(HELPER . 'function.php');
 require_once(HELPER . 'style.php');
 require_once(HELPER . 'require.php');
+
+/* ============================================= ===
+  LANGUAGE FUNCTION
+  =================================================== */
+if (!isset($_SESSION['languages'])) {
+    $_SESSION['languages'] = 'cn';
+}
+
+global $language;
+function change_translate_text($translated)
+{
+    switch ($_SESSION['languages']) {
+        case 'cn':
+            $languages = 'cn';
+            break;
+        case 'en':
+            $languages = 'en';
+            break;
+        case 'vn':
+            $languages = 'vn';
+            break;
+    }
+
+
+    if (is_admin()) {
+        $file = dirname(dirname(dirname(__FILE__))) . "/languages/admin_languages/data.php";
+    } else {
+        $file = dirname(dirname(dirname(__FILE__))) . "/languages/{$languages}/data.php";
+    }
+    include_once $file;
+
+    $data = getTranslate();
+    if (isset($data[$translated])) {
+        return $data[$translated];
+    }
+    return $translated;
+}
+
+add_filter('gettext', 'change_translate_text', 20);
+
+
 
 /* thiet lap chieu rong cua noi dung */
 if (!isset($content_width)) {
@@ -59,9 +103,7 @@ if (!function_exists('suite_theme_setup')) {
         $default_background = array('defualt-color' => '#e8e8e8');
         add_theme_support('custom-background', $default_background);
 
-        /* them menu co phan khai bao thay doi ngon ngu o phan __  thong qua textdomain */
-        register_nav_menu('primary-menu', __('Primary name', 'suite')); // goi menu de show
-        register_nav_menu('mobile-menu', __('Mobile name', 'suite')); // goi menu de show
+
 
         /* tao sidebar */
         $sidebar = array(
@@ -79,35 +121,7 @@ if (!function_exists('suite_theme_setup')) {
 }
 
 
-/* ============================================= ===
-  LANGUAGE FUNCTION
-  =================================================== */
 
-global $language;
-function change_translate_text($translated)
-{
-    if ($_SESSION['languages'] == 'vn') {
-        $languages = 'vn';
-    } else {
-        $languages = 'cn';
-    }
-
-    if (is_admin()) {
-        $file = dirname(dirname(dirname(__FILE__))) . "/languages/admin_languages/data.php";
-        // $file = DIR_LANGUAGES . 'admin_language/data.php';
-    } else {
-        $file = dirname(dirname(dirname(__FILE__))) . "/languages/{$languages}/data.php";
-    }
-    include_once $file;
-
-    $data = getTranslate();
-    if (isset($data[$translated])) {
-        return $data[$translated];
-    }
-    return $translated;
-}
-
-add_filter('gettext', 'change_translate_text', 20);
 
 /* ==============================================================
   THEM CHUC NANG UPLOAD FILE CHO FORM META
@@ -142,34 +156,6 @@ if (!function_exists('suite_header')) {
 }
 
 /* tao menu */
-if (!function_exists('suite_menu')) {
-
-    function suite_menu($slug)
-    {
-        $menu = array(
-            'theme_location' => $slug, // chon menu dc thiet lap truoc
-            'container' => 'nav', // tap html chua menu nay
-            'container_class' => $slug, // class cua mennu
-            'items_wrap' => '<ul id="%1$s" class="%2$s sf-menu">%3$s</ul>'
-        );
-        wp_nav_menu($menu);
-    }
-}
-
-if (!function_exists('mobile_menu')) {
-
-    function mobile_menu($slug)
-    {
-        $menu = array(
-            'theme_location' => $slug, // chon menu dc thiet lap truoc
-            'container' => 'nav', // tap html chua menu nay
-            'container_class' => $slug, // class cua mennu
-            'container_id' => $slug, // class cua mennu
-            'items_wrap' => '<ul id="%1$s" class="%2$s sf-menu">%3$s</ul>'
-        );
-        wp_nav_menu($menu);
-    }
-}
 
 
 /* tao phan trang pagination */
@@ -354,110 +340,8 @@ function checkContent($subject)
     return $result;
 }
 
-function recruitMetaBox($recMeta, $_post)
-{
 
-    $editor = checkContent($_post['editor']);
-    $orther = checkContent($_post['another']);
 
-    update_post_meta($recMeta, '_recruit_like', 0);
-    update_post_meta($recMeta, '_recruit_view', 0);
-    update_post_meta($recMeta, '_recruit_postby', $_SESSION['login']);
-    update_post_meta($recMeta, '_recruit_status', $_post['chk_status']);
-    update_post_meta($recMeta, '_recruit_company_tw', esc_attr($_post['txt_company_tw']));
-    update_post_meta($recMeta, '_recruit_company_vn', esc_attr($_post['txt_company_vn']));
-    update_post_meta($recMeta, '_recruit_company_en', esc_attr($_post['txt_company_en']));
-    update_post_meta($recMeta, '_recruit_address', esc_attr($_post['txt_address']));
-    update_post_meta($recMeta, '_recruit_phone', esc_attr($_post['txt_phone']));
-    update_post_meta($recMeta, '_recruit_email', esc_attr($_post['txt_email']));
-    update_post_meta($recMeta, '_recruit_count', esc_attr($_post['txt_count']));
-    update_post_meta($recMeta, '_recruit_summary', $editor);
-
-    update_post_meta($recMeta, '_recruit_lack_job', esc_attr($_post['txt_lack_job']));
-    update_post_meta($recMeta, '_recruit_lack_count', esc_attr($_post['txt_lack_count']));
-    update_post_meta($recMeta, '_recruit_sex', esc_attr($_post['sel_sex']));
-    update_post_meta($recMeta, '_recruit_date_from', esc_attr($_post['txt_date_from']));
-    update_post_meta($recMeta, '_recruit_date_to', esc_attr($_post['txt_date_to']));
-    update_post_meta($recMeta, '_recruit_level', esc_attr($_post['txt_level']));
-    update_post_meta($recMeta, '_recruit_experience', esc_attr($_post['txt_experience']));
-    update_post_meta($recMeta, '_recruit_age_from', esc_attr($_post['txt_age_from']));
-    update_post_meta($recMeta, '_recruit_age_to', esc_attr($_post['txt_age_to']));
-    update_post_meta($recMeta, '_recruit_language', esc_attr($_post['txt_language']));
-    update_post_meta($recMeta, '_recruit_work_space', esc_attr($_post['txt_word_space']));
-    update_post_meta($recMeta, '_recruit_salary', esc_attr($_post['txt_salary']));
-    update_post_meta($recMeta, '_recruit_orther', $orther);
-    update_post_meta($recMeta, '_recruit_contact_name', esc_attr($_post['txt_contact_name']));
-    update_post_meta($recMeta, '_recruit_contact_phone', esc_attr($_post['txt_contact_phone']));
-    update_post_meta($recMeta, '_recruit_contact_email', esc_attr($_post['txt_contact_email']));
-
-    update_post_meta($recMeta, 'seo_title', esc_attr(substr($_post['txt_title'], 0, 20)));
-    update_post_meta($recMeta, 'seo_description', esc_attr($_post['editor']));
-    update_post_meta($recMeta, 'seo_keywords', esc_attr($_post['txt_title']));
-
-    // ADD NEW 18-05-2020
-    update_post_meta($recMeta, '_recruit_place', esc_attr($_post['sel_place']));
-    update_post_meta($recMeta, '_recruit_career', esc_attr($_post['sel_career']));
-}
-
-function recruitmentMetaBox($recMeta, $_post)
-{
-
-    if (!empty($_FILES['file_upload']['name'])) {
-        $loginID = $_SESSION['login_id'];
-        $uploadReturn = uploadFile($loginID, $_FILES);
-        update_post_meta($loginID, 'm_img', $uploadReturn);
-        update_post_meta($recMeta, '_recruit_img', $uploadReturn);
-    };
-
-    if (is_array($uploadReturn)) {
-        return $uploadReturn;
-    } else {
-        $orther = checkContent($_post['another']);
-        update_post_meta($recMeta, '_recruit_like', 0);
-        update_post_meta($recMeta, '_recruit_view', 0);
-        update_post_meta($recMeta, '_recruit_postby', $_SESSION['login']);
-        update_post_meta($recMeta, '_recruit_status', $_post['chk_status']);
-        update_post_meta($recMeta, '_recruit_fullname', esc_attr($_post['txt_fullname']));
-        update_post_meta($recMeta, '_recruit_birthday', esc_attr($_post['txt_birthday']));
-        update_post_meta($recMeta, '_recruit_sex', esc_attr($_post['sel_sex']));
-        update_post_meta($recMeta, '_recruit_address', esc_attr($_post['txt_address']));
-        update_post_meta($recMeta, '_recruit_email', esc_attr($_post['txt_email']));
-        update_post_meta($recMeta, '_recruit_phone', esc_attr($_post['txt_phone']));
-        update_post_meta($recMeta, '_recruit_level', esc_attr($_post['txt_level']));
-        update_post_meta($recMeta, '_recruit_experience', esc_attr($_post['txt_experience']));
-        update_post_meta($recMeta, '_recruit_another', $orther);
-        //===== add new 09/04/2020
-        update_post_meta($recMeta, '_recruit_height', esc_attr($_post['txt_height']));
-        update_post_meta($recMeta, '_recruit_department', esc_attr($_post['txt_department']));
-        update_post_meta($recMeta, '_recruit_work', esc_attr($_post['txt_work']));
-        update_post_meta($recMeta, '_recruit_job', esc_attr($_post['txt_job']));
-        update_post_meta($recMeta, '_recruit_salary', esc_attr($_post['txt_salary']));
-        update_post_meta($recMeta, '_recruit_industry', esc_attr($_post['txt_industry']));
-        update_post_meta($recMeta, '_recruit_language', esc_attr($_post['txt_language']));
-        update_post_meta($recMeta, '_recruit_license', esc_attr($_post['txt_license']));
-        update_post_meta($recMeta, '_recruit_software', esc_attr($_post['txt_software']));
-        update_post_meta($recMeta, '_recruit_drive', esc_attr($_post['chk_drive']));
-        update_post_meta($recMeta, '_recruit_line', esc_attr($_post['txt_line']));
-
-        update_post_meta($recMeta, 'seo_title', esc_attr(substr($_post['txt_title'], 0, 20)));
-        update_post_meta($recMeta, 'seo_description', esc_attr($_post['txt_title']));
-        update_post_meta($recMeta, 'seo_keywords', esc_attr($_post['txt_title']));
-    }
-}
-
-/*
- * // phan nay an di phan quan tri xoa post
-  function hide_that_stuff() {
-  if ('member2' == get_post_type())
-  echo '<style type="text/css">
-  #favorite-actions {display:none;}
-  .add-new-h2{display:none;}
-  .tablenav{display:none;}
-  </style>';
-  }
-
-  add_action('admin_head', 'hide_that_stuff');
- */
 
 /* them cac phan meta box */
 
@@ -611,74 +495,11 @@ if (!is_admin()) {
                 document.getElementById("menu-pages").style.display = "none";
             </script>
 
-            <?php
-        }
-    }
-}
-
-/* KIEM TRA KHI POST VA EVENT THI SEND EMIAL DE CAC THANH VIEN ( UPDATE VA ADD NEW DEU SEND ); */
-
-function tw_add_post_send_mail()
-{
-    global $post;
-    if ($post->post_type == 'post' || $post->post_type == 'event') {
-        if (isset($_GET['message'])) {
-            if (isset($_GET['send'])) {
-                $arrMember = array(
-                    'post_type' => 'member',
-                    'posts_per_page' => -1,
-                    'meta_query' => array(
-                        array(
-                            'key' => 'm_active',
-                            'value' => 'on',
-                        )
-                    )
-                );
-                $memQuery = new WP_Query($arrMember);
-                // LAY NOI DUNG BAI VIET THONG QUA ID TREN URL
-                if (isset($_GET['post'])) {
-                    $postID = (int) $_GET['post'];
-                    $post = get_post($postID);
-                    $postName = $post->post_name;
-                    setup_postdata($post);
-                    $title = get_the_title();
-                    $content = '<h3>' . $title . '</h3>' . get_the_content() . '<br> <a href="' . home_url($postName) . '">越南台灣商會聯合總</a>';
-                    wp_reset_postdata();
-                }
-                $arrEmail = array();
-                if ($memQuery->have_posts()) :
-                    while ($memQuery->have_posts()) :
-                        $memQuery->the_post();
-                        $postMeta = get_post_meta($post->ID);
-                        $fullname = $postMeta['m_fullname'][0];
-                        $arrEmail[] = $postMeta['m_email'][0];
-                    endwhile;
-                endif;
-
-                wp_reset_postdata();
-                // PHAN SEND EMAIL
-                $subj = '越南台灣商會聯合總訊息';
-                //$body = 'This is the body of the email';
-                wp_mail($arrEmail, $subj, $content);
-            } else {
-            ?>
-                <!--                <script type="text/javascript">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                if (confirm("此內容是否寄Email給會員們!") === true) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    var newURL = window.location.href;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    newURL += '&send=1';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    alert(newURL);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    window.location = newURL;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    window.location='//<?php //echo home_url()                                       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ?>';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    // alert(5);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </script>-->
 <?php
-            }
         }
     }
 }
+
 
 /* DOC CAC THE HTML TRONG NOI DUNG MAIL */
 add_filter('wp_mail_content_type', 'set_content_type');

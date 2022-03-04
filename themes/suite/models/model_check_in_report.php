@@ -65,7 +65,7 @@ class Admin_Model_Check_In_Report
 
         $newBranchitem = array();
         $newBranch = array();
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
         foreach ($row as $val) {
             $newBranchitem['code'] = $myList->get_country($val['code']);

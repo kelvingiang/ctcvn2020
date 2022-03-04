@@ -44,7 +44,7 @@
 
 <body <?php body_class(); ?>>
     <!--  kiem tra logined  -->
-    <?php echo $_SESSION['languages']; ?>
+
     <?php
     if (is_page('recruit') || is_page('article')) {
         if (!isset($_SESSION['login'])) {
@@ -68,16 +68,19 @@
         </div>
         <?php if (!is_page('check-in') && !is_page('check_in')) { ?>
             <div>
+                <?php get_template_part('templates/template', 'language') ?>
                 <?php get_template_part('templates/template', 'menu') ?>
+
             </div>
             </hr>
             <div>
-                <?php get_template_part('templates/template', 'brach-logo'); ?>
+                <?php //get_template_part('templates/template', 'brach-logo'); 
+                ?>
             </div>
     </div>
 <?php } ?>
 </div>
-<div class=" container-fluid">
+<div>
     <div style="margin: 0px 10px 0px 10px">
 
         <?php

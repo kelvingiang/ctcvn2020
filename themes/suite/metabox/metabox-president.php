@@ -37,7 +37,7 @@ class Admin_Metabox_President
                 <div class="cell-text">
                     <select id="sel_Country" name="sel_country">
                         <?php
-                        require_once DIR_CODES . 'my_list.php';
+                        require_once DIR_CODES . 'my-list.php';
                         $myList = new Codes_My_List();
                         foreach ($myList->countryList() as $key => $val) { ?>
                             <option value='<?php echo $key ?>' <?php echo get_post_meta($post->ID, '_president_branch', true)  == $key ? 'selected' : '' ?>>

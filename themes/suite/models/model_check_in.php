@@ -227,7 +227,7 @@ class Admin_Model_Check_In extends WP_List_Table
             $filterVal = @$_REQUEST['filter_branch'];
             //            $dd = array('0' => __('Select Brach'));
             //            $country = $dd + countryList();
-            require_once DIR_CODES . 'my_list.php';
+            require_once DIR_CODES . 'my-list.php';
             $my_list = new Codes_My_List();
             $options['data'] = $my_list->countryList();
 
@@ -314,7 +314,7 @@ class Admin_Model_Check_In extends WP_List_Table
     // LAY GIA TRI MA THONG QUA QUA HAM get_country SHOW TEN RA
     public function column_country($item)
     {
-        require_once DIR_CODES . 'my_list.php';
+        require_once DIR_CODES . 'my-list.php';
         $myList = new Codes_My_List();
         echo $myList->get_country($item['country']);
     }
