@@ -1,0 +1,113 @@
+.status-active,
+.status-inactive {
+  background-color: #286903;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.status-inactive {
+  background-color: #dfdfdf;
+}
+
+.row-all {
+  padding: 0.3rem 1rem;
+}
+
+.row-one-clo {
+  padding: 0.5rem;
+  display: flex;
+}
+.row-one-clo .cell-one {
+  width: 20%;
+}
+.row-one-clo .cell-two {
+  width: 80%;
+}
+
+.row-four-clo {
+  padding: 0.5rem;
+  display: flex;
+}
+.row-four-clo .cell-one {
+  width: 20%;
+}
+.row-four-clo .cell-two {
+  width: 30%;
+}
+.row-four-clo .cell-three {
+  width: 20%;
+  text-align: right;
+}
+.row-four-clo .cell-three label {
+  padding-right: 2.5rem;
+}
+.row-four-clo .cell-four {
+  width: 30%;
+}
+
+.row-one-clo input[type="text"],
+row-four-clo input[type="text"] {
+  width: 100%;
+  height: 2.5rem;
+}
+
+.label-admin {
+  color: #7c7979;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  padding-top: 10px;
+}
+
+.admin-link {
+  font-weight: bold;
+  color: #2aa1fc;
+  font-size: 15px;
+}
+.admin-link:hover {
+  color: #035caf;
+}
+
+h2.hndle {
+  color: #31598c;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+#show-img {
+  background-position: center center;
+  float: left;
+  margin: 0rem 2rem;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  background-size: cover;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+}
+
+.msg-space {
+  height: 3rem;
+  background-color: #6aaae6;
+  padding: 0.3rem 0.5rem;
+  margin: 1rem 1rem 1rem 0rem;
+  border-radius: 0.2rem;
+}
+.msg-space h2 {
+  color: white;
+}
+
+#wpfooter {
+  display: none;
+}
+
+.member_email {
+  width: 800px !important;
+}
+
+.member_status {
+  width: 50px;
+}
+
+/*# sourceMappingURL=admin.css.map */

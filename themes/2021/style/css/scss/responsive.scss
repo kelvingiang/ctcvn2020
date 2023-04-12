@@ -1,0 +1,61 @@
+@mixin Respond($breakpoint){
+    @if $breakpoint == phone {
+        @media (max-width:600px){@content};
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width:900px) {@content};
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width:1200px){@content};
+    }
+    @if $breakpoint == big-desktop{
+        @media (min-width:1800px){@content};
+    }
+}
+//====== index page ===============================================
+.index-friend-speac{
+    @include Respond(big-desktop){
+        display: block;
+    }
+    @include Respond(tab-land){
+        display: none
+    }
+
+}
+
+.index-friend-speac-sidebar{
+    @include Respond(big-desktop){
+        display: none;
+    }
+    @include Respond(tab-land){
+        display: block;
+    }
+}
+
+.index-silder-index{
+    @include Respond(big-desktop){
+        display: block;
+    }
+
+    @include Respond(tab-land){
+        display: block;
+    }
+}
+
+.index-advertising-speac{
+    @include Respond(tab-land){
+        display: block;
+    }
+    @include Respond(tab-port){
+        display: block;
+    }
+}
+
+.index-advertising-speac-sidebar{
+     @include Respond(tab-land){
+        display: none;
+    }
+    @include Respond(tab-port){
+        display: block;
+    }
+}
