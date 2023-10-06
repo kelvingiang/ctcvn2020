@@ -702,3 +702,11 @@ add_filter('show_admin_bar', '__return_false');
 
 
 flush_rewrite_rules(false);
+
+add_filter('https://domain của bạn', 'wpadmin_filter', 10);
+function add_filter( $url, $path, $orig_scheme ) {
+$old = array( "/(wp-admin)/");
+$admin_dir = WP_ADMIN_DIR;
+$new = array($admin_dir);
+return preg_replace( $old, $new, $url, 1);
+}
