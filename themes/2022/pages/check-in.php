@@ -55,8 +55,7 @@
                     </form>
                 </div>
                 <div>
-                    <?php get_template_part("templates/template", "ad-logo");
-                    ?>
+                    <?php  get_template_part("templates/template", "ad-logo-check-in"); ?>
                 </div>
             </div>
             <div class="content-info">
@@ -78,8 +77,7 @@
                     </div>
 
                     <div class="guest-info">
-                        <div>
-                            <label>姓 名 : </label>
+                        <div class="guest_name">
                             <label id="guest_name">&nbsp;</label>
                         </div>
                         <div>
