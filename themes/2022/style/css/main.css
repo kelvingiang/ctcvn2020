@@ -1809,21 +1809,32 @@ ul.single-pagination {
           .check-in-space .content-info #guest-main .guest-img #guest-picture {
             text-align: center; }
             .check-in-space .content-info #guest-main .guest-img #guest-picture img {
-              width: 80%;
+              width: 70%;
               border-radius: 0.5rem;
               border: 0.2rem #ccc solid; }
         .check-in-space .content-info #guest-main .guest-info {
           flex: 1; }
           .check-in-space .content-info #guest-main .guest-info > div {
             display: flex;
-            flex-direction: row; }
+            flex-direction: row;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted #dfdede; }
             .check-in-space .content-info #guest-main .guest-info > div label {
-              font-size: 1.5rem;
+              font-size: 1rem;
               font-weight: bold;
-              color: #064c9c; }
+              color: #265d7c; }
             .check-in-space .content-info #guest-main .guest-info > div label:nth-child(1) {
-              color: #999;
+              color: #b8b7b7;
               margin-right: 1rem; }
+          .check-in-space .content-info #guest-main .guest-info .guest_name {
+            display: flex;
+            justify-content: center; }
+            .check-in-space .content-info #guest-main .guest-info .guest_name #guest_name {
+              font-size: 3rem;
+              color: #093958;
+              letter-spacing: 3px;
+              font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+              text-shadow: 2px 2px 6px #a3a3a3; }
       .check-in-space .content-info #barcode-error {
         display: none;
         font-size: 2rem;
