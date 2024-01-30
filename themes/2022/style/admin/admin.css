@@ -256,6 +256,7 @@
 }
 
 .radio-space {
+<<<<<<< HEAD
   display: flex;
 }
 .radio-space div {
@@ -265,3 +266,13 @@
 .radio-space div label {
   font-weight: bold;
 }/*# sourceMappingURL=admin.css.map */
+=======
+  display: flex; }
+  .radio-space div {
+    margin: 1rem;
+    width: 5rem; }
+    .radio-space div label {
+      font-weight: bold; }
+
+/*# sourceMappingURL=admin.css.map */
+>>>>>>> c126cb3b9f138bec43861e9bcdf2ef386342eee6
