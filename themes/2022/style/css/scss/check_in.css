@@ -1,0 +1,169 @@
+.check-in-space {
+  display: flex;
+  flex-direction: column;
+}
+.check-in-space .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  height: 160px;
+}
+.check-in-space .header .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  margin: 0.5rem 0;
+}
+.check-in-space .header .logo h2 {
+  font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.8rem;
+}
+.check-in-space .header .logo h3 {
+  font-family: "Times New Roman", Microsoft YaHei, Arial, sans-serif;
+  font-size: 0.6rem;
+}
+.check-in-space .header .logo img {
+  width: 5rem;
+}
+.check-in-space .header .title {
+  text-align: center;
+}
+.check-in-space .header .title h1 {
+  color: #fff;
+  padding: 1rem 0 0.5rem;
+  font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.check-in-space .content {
+  display: flex;
+  flex-direction: row;
+}
+.check-in-space .content-form {
+  flex: 1;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.check-in-space .content-form input[type=text] {
+  width: 70%;
+}
+.check-in-space .content-form input[type=submit] {
+  width: 20%;
+  height: 2.6rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+.check-in-space .content-form div:nth-child(2) {
+  margin-top: 1rem;
+}
+.check-in-space .content-form div:nth-child(2) #checkInCarousel ul .ad-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  border-bottom: 1px #666 dotted;
+  padding: 1rem 0;
+}
+.check-in-space .content-form div:nth-child(2) #checkInCarousel ul .ad-list-item img {
+  width: 200px;
+}
+.check-in-space .content-form div:nth-child(2) #checkInCarousel ul .ad-list-item label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+}
+.check-in-space .content-info {
+  flex: 3;
+}
+.check-in-space .content-info .content-welcome {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 1rem;
+  font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+}
+.check-in-space .content-info .content-welcome #last-check-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.check-in-space .content-info .content-welcome #last-check-in label {
+  color: #999;
+  font-size: 1rem;
+}
+.check-in-space .content-info .content-welcome div {
+  flex: 1;
+  color: red;
+}
+.check-in-space .content-info .content-welcome div h2 {
+  font-size: 2.5rem;
+}
+.check-in-space .content-info .content-welcome div h3 {
+  font-size: 1.2rem;
+}
+.check-in-space .content-info .content-welcome div:nth-child(2) {
+  text-align: center;
+}
+.check-in-space .content-info #guest-main {
+  display: flex;
+  flex-direction: row;
+}
+.check-in-space .content-info #guest-main .guest-img {
+  flex: 2;
+}
+.check-in-space .content-info #guest-main .guest-img #guest-picture {
+  text-align: center;
+}
+.check-in-space .content-info #guest-main .guest-img #guest-picture img {
+  width: 70%;
+  border-radius: 0.5rem;
+  border: 0.2rem #ccc solid;
+}
+.check-in-space .content-info #guest-main .guest-info {
+  flex: 1;
+}
+.check-in-space .content-info #guest-main .guest-info > div {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #dfdede;
+}
+.check-in-space .content-info #guest-main .guest-info > div label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(38, 93, 124);
+}
+.check-in-space .content-info #guest-main .guest-info > div label:nth-child(1) {
+  color: #b8b7b7;
+  margin-right: 1rem;
+}
+.check-in-space .content-info #guest-main .guest-info .guest_name {
+  display: flex;
+  justify-content: center;
+}
+.check-in-space .content-info #guest-main .guest-info .guest_name #guest_name {
+  font-size: 3rem;
+  color: rgb(9, 57, 88);
+  letter-spacing: 3px;
+  font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+  text-shadow: 2px 2px 6px #a3a3a3;
+}
+.check-in-space .content-info #barcode-error {
+  display: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  margin-top: 10%;
+}
+.check-in-space .content-info #barcode-unactive {
+  display: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  margin-top: 10%;
+}/*# sourceMappingURL=check_in.css.map */

@@ -1,0 +1,27 @@
+.recruit-space {
+  padding-left: 1rem;
+}
+.recruit-space div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.recruit-space div label {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  color: #666;
+}
+.recruit-space .two-row {
+  display: flex;
+  flex-direction: row;
+}
+.recruit-space .two-row div {
+  flex: 1;
+}
+.recruit-space .two-row div input[type=text] {
+  width: 80% !important;
+}
+.recruit-space .two-row div select {
+  width: 80% !important;
+}/*# sourceMappingURL=tuyendung.css.map */

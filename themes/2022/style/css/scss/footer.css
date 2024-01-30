@@ -1,0 +1,36 @@
+#footer {
+  /*height: 210px;*/
+  width: 100%;
+  background-color: #112d46;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  color: rgb(163, 163, 163);
+  padding: 2rem 1rem 0rem;
+}
+#footer a {
+  font-weight: bold;
+  color: rgb(155, 155, 155);
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+#footer a:hover {
+  opacity: 1;
+}
+#footer .footer-copyright {
+  text-align: center;
+}
+#footer .footer-counter {
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+#footer .footer-counter > div {
+  display: flex;
+  flex-direction: row;
+}
+#footer .footer-counter > div .footer-counter-number {
+  text-align: left;
+  font-weight: 400;
+}/*# sourceMappingURL=footer.css.map */

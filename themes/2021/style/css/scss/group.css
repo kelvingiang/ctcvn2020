@@ -1,0 +1,122 @@
+.brown-group {
+  border: #DBDBDB 1px solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 5px 8px 10px 2px #888888;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.brown-group .brown-title {
+  background-color: #9f3b02;
+  min-height: 40px;
+  margin-top: 1px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.brown-group .brown-title label {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+
+.orange-group {
+  margin-left: 20px;
+}
+.orange-group .orange-title {
+  background-color: #FF8003;
+  border-radius: 3px 3px 0 0;
+  min-height: 40px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.orange-group .orange-title label {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+
+.blue-group {
+  border: #DBDBDB 1px solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.blue-group .blue-title {
+  background: url(../images/title-bg.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100px 50px;
+  background-color: #8c0303;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.blue-group .blue-title label {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+
+.gray-group {
+  border: #DBDBDB 1px solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.gray-group .gray-title {
+  background-color: #d7d5d5;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.gray-group .gray-title label {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+.gray-group .gray-title label a {
+  text-decoration: none;
+  color: #0765c8;
+  display: block;
+}
+.gray-group .gray-title label a:hover {
+  color: #0d3a6b;
+}
+
+.head-title {
+  margin-top: 1rem;
+  height: 75px;
+  margin-left: -1rem;
+  background-color: transparent;
+  background-image: url("../images/bg-head.png");
+  background-repeat: no-repeat;
+  position: relative;
+  margin-bottom: 30px;
+}
+.head-title .title {
+  background-color: #FF8003;
+  margin-top: 18px;
+  margin-left: 2rem;
+  height: 49px;
+  position: absolute;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 5px 5px 5px #c9c9c9;
+  min-width: 40%;
+  width: 70%;
+}
+.head-title .title h2 {
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  padding-left: 5rem;
+  color: white;
+  font-size: 2rem;
+  margin-top: 11px;
+}/*# sourceMappingURL=group.css.map */

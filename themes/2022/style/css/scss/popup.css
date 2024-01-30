@@ -1,0 +1,28 @@
+.modal-dialog .modal-header {
+  background-color: #286090 !important;
+  border-radius: 4px 4px 0 0 !important;
+  color: white !important;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-dialog .modal-header div:first-child {
+  width: 20px;
+  background-color: #286090;
+}
+.modal-dialog .modal-header h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.modal-dialog .modal-header .close {
+  background-color: transparent;
+  border: 0;
+  color: white;
+}
+.modal-dialog .modal-header .close:hover {
+  color: rgb(216, 216, 216);
+}
+.modal-dialog .modal-body div {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=popup.css.map */
