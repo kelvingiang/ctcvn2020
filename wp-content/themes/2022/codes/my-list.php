@@ -174,6 +174,8 @@ class Codes_My_List
             '0310' => '海防分會',
             '0360' => '太平分會',
             '0040' => '河內分會',
+            '0229' => '寧平分會',
+            '0271' => '平福分會',
             '0808' => '青商會'
         );
         return $brachArr;
@@ -226,6 +228,12 @@ class Codes_My_List
                 break;
             case '0040':
                 $country = '河內分會';
+                break;
+            case '0229':
+                $country = '寧平分會';
+                break;
+            case '0271':
+                $country = '平福分會';
                 break;
             case '0808':
                 $country = '青商會';
