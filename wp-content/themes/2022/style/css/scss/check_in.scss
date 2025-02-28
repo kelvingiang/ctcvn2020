@@ -5,21 +5,33 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: red;
-        height: 160px;
+        // background-color: red;
+        background-image: url("../../images/BG-1300x200.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom -30px  right;
+        height: 200px;
         .logo {
             display: flex;
             flex-direction: row;
             align-items: center;
-            color: #fff;
-            margin: 0.5rem 0;
+            color: #ff0101;
+            margin: 0rem 0;
             h2 {
-                font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+                font-family:
+                    "DFKai-SB",
+                    Microsoft YaHei,
+                    Arial,
+                    sans-serif;
                 font-size: 1.5rem;
                 letter-spacing: 0.8rem;
             }
             h3 {
-                font-family: "Times New Roman", Microsoft YaHei, Arial, sans-serif;
+                font-family:
+                    "Times New Roman",
+                    Microsoft YaHei,
+                    Arial,
+                    sans-serif;
                 font-size: 0.6rem;
             }
             img {
@@ -27,11 +39,15 @@
             }
         }
         .title {
-            text-align: center;
+            text-align:left;
             h1 {
-                color: #fff;
-                padding: 1rem 0 0.5rem;
-                font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+                color: #ff0000;
+                padding: 0rem 0 0.5rem;
+                font-family:
+                    "DFKai-SB",
+                    Microsoft YaHei,
+                    Arial,
+                    sans-serif;
                 font-size: 2rem;
                 font-weight: bold;
             }
@@ -84,7 +100,11 @@
                 display: flex;
                 flex-direction: row;
                 margin: 2rem 1rem;
-                font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+                font-family:
+                    "DFKai-SB",
+                    Microsoft YaHei,
+                    Arial,
+                    sans-serif;
                 #last-check-in {
                     display: flex;
                     flex-direction: row;
@@ -124,7 +144,7 @@
                 }
                 .guest-info {
                     flex: 1;
-                    >div {
+                    > div {
                         display: flex;
                         flex-direction: row;
                         padding: 0.5rem 0;
@@ -146,7 +166,11 @@
                             font-size: 3rem;
                             color: rgb(9, 57, 88);
                             letter-spacing: 3px;
-                            font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
+                            font-family:
+                                "DFKai-SB",
+                                Microsoft YaHei,
+                                Arial,
+                                sans-serif;
                             text-shadow: 2px 2px 6px #a3a3a3;
                         }
                     }

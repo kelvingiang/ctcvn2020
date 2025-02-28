@@ -1,0 +1,409 @@
+$orange: #ec5b07;
+.education-main {
+    display: flex;
+    flex-direction: column;
+    .education-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: #1e70a7;
+        h1 {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 1rem 0;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+    .education-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem 0;
+        @include Respond(md) {
+            margin-top: 5rem;
+        }
+        @include Respond(sm) {
+            margin-top: 5rem;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            h4 {
+                font-weight: bold;
+                font-size: 1.2rem;
+                @include Respond(sm) {
+                    font-size: 1rem;
+                }
+            }
+            img {
+                @include Respond(lg) {
+                    width: 100px;
+                }
+                @include Respond(md) {
+                    width: 90px;
+                }
+                @include Respond(sm) {
+                    width: 80px;
+                }
+
+                width: 120px;
+            }
+
+            label {
+                @include Respond(sm) {
+                    display: none;
+                }
+                @include Respond(md) {
+                    font-size: 0.8rem;
+                }
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .education-qrcode {
+        background-color: #ec5b07;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        color: #ffffff;
+        padding: 1rem;
+        .year {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 6rem;
+            text-shadow:
+                1px 1px 2px rgb(247, 0, 0),
+                2px 2px 2px rgb(255, 255, 255),
+                3px 3px 5px rgb(255, 255, 255);
+        }
+        .title-cn {
+            @include Respond(sm) {
+                 font-size: 1.5rem;
+            }
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .title-vn {
+            @include Respond(sm) {
+                font-size: 1.5rem;
+           }
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .title-en {
+            @include Respond(sm) {
+                font-size: 1.5rem;
+           }
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .qrcode-space {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            div {
+                text-align: center;
+                font-weight: bold;
+                flex: 1;
+                img {
+                    margin: 1rem 2rem;
+                    border-radius: 5px;
+                }
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .education-register {
+        .time {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $orange;
+            padding-top: 1rem;
+            color: #ffffff;
+            font-weight: bold;
+            border-top: 1px solid #a7a7a7;
+            div {
+                text-align: center;
+                h3 {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+
+        .download {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            // justify-content:space-between;
+            // align-items: center;
+            div {
+                flex: 1;
+                &:nth-child(1){
+                    img{
+                        width: 100%;
+                    }
+                }
+                &:nth-child(2) {
+                    width: 100%;
+                    align-content: center;
+
+                    .btn-download {
+                        border: #1e70a7;
+                        width: 300px;
+                        height: 150px;
+                        background-image: linear-gradient(rgba(3, 143, 236, 0.904), rgb(0, 89, 255));
+                        margin: auto auto;
+                        color: #ccc;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        border-radius: 10px;
+                        text-align: center;
+                        align-content: center;
+                        position: relative;
+                        @include Respond(sm) {
+                           width: 180px;
+                           height: 80px;
+                        //    margin: 2rem;`
+                       }
+
+                        &::before {
+                            // border-radius: 100%;
+                            content: "";
+                            background-image: linear-gradient(to bottom, #cccccc 0%, #a3a2a2 100%);
+                            top: -5px;
+                            left: -5px;
+                            bottom: -5px;
+                            right: -5px;
+                            position: absolute;
+                            z-index: -1;
+                            border-radius: 10px;
+                        }
+                        &:hover {
+                            color: #ffffff;
+                            background-image: linear-gradient(rgba(76, 147, 228, 0.904), rgb(8, 54, 182));
+                            &::before {
+                                background-image: linear-gradient(to bottom, #d4d4d4 0%, #e4e4e4 100%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .education-menu {
+        background-color: rgb(0, 89, 255);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+        padding: 5px 0px;
+
+        // thiet lap khi di chuyen den cach top 55 se ngung lai
+        position: sticky;
+        top: 55px; /* 停在離頂部 50px */
+        // background: yellow; /* 只是為了示範 */
+        z-index: 10; /* 確保不被其他元素遮擋 */
+        @include Respond(sm) {
+            display: none;
+        }
+        @include Respond(md) {
+            position: relative;
+            top: 0px; /* 停在離頂部 50px */
+         }
+        div {
+            font-size: 1.1rem;
+            color: rgb(255, 255, 255);
+            margin: 2px 10px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                color: #012f47;
+            }
+        }
+    }
+
+    .education-content {
+        .row {
+            padding: 1rem 2rem 1rem;
+            margin: 3rem 2rem;
+            border-bottom: 1px solid #dbdbdb;
+            @include Respond(sm) {
+                margin: 0rem 0rem;
+                padding: 1rem 0.2rem 1rem;
+            }
+            .title {
+                color: #1e70a7;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            .content {
+                color: #666;
+                padding-left: 2rem;
+                @include Respond(sm) {
+                    padding-left: 0rem;
+                }
+                img{
+                
+                    @include Respond(sm) {
+                        width: 100%;
+                    }
+                    @include Respond(md) {
+                        width: 90%;
+                    }
+                  
+                }
+
+                .education-table {
+                    background-color: #eeecec;
+                    width: 80%;
+                    margin: auto;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    border: 1px solid #b3b3b3;
+                    @include Respond(sm) {
+                       width: 100%;
+                    }
+                    .table-title {
+                        background-color: #57626b !important;
+                        color: #ffffff;
+                        min-height: 40px;
+                        text-align: center;
+                        font-weight: bold;
+                        div {
+                            &:nth-child(1) {
+                                border-left: 0px;
+                            }
+                            border-left: 1px solid #ffffff;
+                            padding-top: 6px;
+                        }
+                    }
+                    .education-table-row {
+                        display: flex;
+                        flex-direction: row;
+                        min-height: 30px;
+
+                        &:nth-child(odd) {
+                            background-color: #ffffff;
+                        }
+                        .cell-1 {
+                            width: 50px;
+                            text-align: center;
+                        }
+                        .cell-2 {
+                            @include Respond(sm) {
+                                width: 30%;
+                            }
+                            width: 20%;
+                            padding-left: 2px;
+                        }
+
+                        .cell-3 {
+                            width: 80%;
+                            padding-left: 2px;
+                        }
+
+                        .cell-4 {
+                            @include Respond(sm) {
+                                width: 25%;
+                            }
+                            width: 30%;
+                            padding-left: 2px;
+                        }
+
+                        .cell-5 {
+                            width: 50%;
+                            padding-left: 2px;
+                        }
+
+                        .cell-6,
+                        .cell-7,
+                        .cell-8,
+                        .cell-9 {
+                            width: 50px;
+                            display: flex;
+                            justify-content: center;
+                            padding-top: 6px;
+                            i {
+                                color: #495863;
+                            }
+                        }
+                    }
+
+                    .table-total {
+                        font-weight: bold;
+                    }
+                }
+                .education-contact {
+                    margin-top: 1rem;
+                    div:nth-child(1) {
+                        font-weight: bold;
+                    }
+                }
+                .education-event {
+                    border-bottom: 1px solid #d1d1d1;
+                    .event-year {
+                        font-weight: bold;
+                        text-align: center;
+                        margin-top: 2rem;
+                    }
+                    .event-image {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        img {
+                            margin: 1rem;
+                            border-radius: 3px;
+                            width: 400px;
+                            @include Respond(md) {
+                                width: 300px;
+                            }
+                          
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .educ-top {
+        position: fixed;
+        bottom: 50px;
+        right: 10px;
+        color: #1e70a7;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0.5;
+        z-index: 20;
+        &:hover {
+            color: #3a3b3b;
+            opacity: 1;
+        }
+    }
+}
