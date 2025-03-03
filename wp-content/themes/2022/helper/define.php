@@ -1,4 +1,5 @@
 <?php
+define('DIR_FONTS', THEME_URL . DS . 'fonts' . DS);
 
 define('DIR_CONTROLLER', THEME_URL . DS . 'controllers' . DS);
 define('DIR_MODEL', THEME_URL . DS . 'models' . DS);

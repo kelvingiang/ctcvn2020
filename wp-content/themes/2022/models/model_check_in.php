@@ -629,8 +629,48 @@ class Admin_Model_Check_In extends WP_List_Table
         // DOI TEN FILE THEO KIEU CHU HOA
         // $newName =  iconv('UTF-8','BIG5', DIR_IMAGES_QRCODE .$name.'-'.$filename .'.png');
         // $oldName  =  iconv('UTF-8','BIG5', $filepath);
-        // rename($oldName , $newName);     
+        // rename($oldName , $newName);  
 
+        //********************************************************* */
+        //=== tạo thêm chữ trên file QRCode /   28/02/2025 
+        // them font NotoSansTC-Regular.ttf vào mục font tạo thêm define DIR_FONTS
+        //start  *********************************************************/
+        // 讀取 QR Code 圖片
+        $qrImage = imagecreatefrompng($filepath);
+        $qrWidth = imagesx($qrImage);
+        $qrHeight = imagesy($qrImage);
+
+        // **設定中文字型**
+        $fontPath = DIR_FONTS . 'NotoSansTC-Regular.ttf'; // 確保字型路徑正確
+        $fontSize = 9; // 字體大小
+        $textPadding = 5; // 文字與 QR Code 之間的距離
+
+        // **計算文字寬度**
+        $box = imagettfbbox($fontSize, 0, $fontPath, $name);
+        $textWidth = abs($box[2] - $box[0]);
+        $textHeight = abs($box[7] - $box[1]);
+
+        // **建立新圖片（比 QR Code 高一點來放文字）**
+        $finalImage = imagecreatetruecolor($qrWidth, $qrHeight + $textHeight + $textPadding);
+        $white = imagecolorallocate($finalImage, 255, 255, 255);
+        $black = imagecolorallocate($finalImage, 0, 0, 0);
+
+        // **填充背景為白色**
+        imagefilledrectangle($finalImage, 0, 0, $qrWidth, $qrHeight + $textHeight + $textPadding, $white);
+        imagecopy($finalImage, $qrImage, 0, 0, 0, 0, $qrWidth, $qrHeight);
+
+        // **在 QR Code 下方添加中文文字**
+        $textX = ($qrWidth - $textWidth) / 2;
+        $textY = $qrHeight + $textHeight; // 文字放在 QR Code 下方
+        imagettftext($finalImage, $fontSize, 0, $textX, $textY, $black, $fontPath, $name);
+
+        // **儲存最終圖片**
+        imagepng($finalImage, $filepath);
+
+        // **釋放記憶體**
+        imagedestroy($qrImage);
+        imagedestroy($finalImage);
+         // end *********************************************************/
         return $filename;
     }
 }
